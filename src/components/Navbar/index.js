@@ -9,10 +9,9 @@ import {
   NavLinks,
 } from "./NavbarElements";
 
-import {ProductSwipe, GraphicSwipe} from "../Swiper/index" 
 
 
-const Navbar = ({setPage, swiper, setSwiper}) => {
+const Navbar = ({setPage, setSwiper}) => {
   
   return (
     <>
@@ -27,10 +26,10 @@ const Navbar = ({setPage, swiper, setSwiper}) => {
           <NavSlide>
 
             <NavItem>
-              <NavLinks id="productsLink" onClick={() => ProductSwipe(swiper, setSwiper)} >Product/</NavLinks>
+              <NavLinks id="productsLink" onClick={() => setSwiper("product")} >Product/</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks id="graphicsLink" onClick={() => GraphicSwipe(swiper, setSwiper)} >Graphic</NavLinks>
+              <NavLinks id="graphicsLink" onClick={() => setSwiper("graphic")} >Graphic</NavLinks>
             </NavItem> 
             
           </NavSlide>

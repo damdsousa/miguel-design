@@ -9,7 +9,7 @@ const HeroSection = ({ page, setPage, setSwiper, swiper }) => {
       <HeroActive>
       
         {page ? 
-        (<AboutSection setPage={setPage}/> ): <SwiperSection swiper={swiper} setSwiper={setSwiper} start={0} numberOfSlides={29} />
+        (<AboutSection setPage={setPage}/> ): <SwiperSection swiper={swiper} />
         }
         {/* {page && <AboutSection  setPage={setPage}/>}
         {!page  && <SwiperSection />} */}

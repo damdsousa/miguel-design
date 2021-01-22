@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 const Home = () => {
   const [page, setPage] = useState(false);
-  const [swiper, setSwiper] = useState(null);
+  const [swiper, setSwiper] = useState("full");
 //   const toggle = () => {
 //     setIsInvisible(!isVisible);
 //   };
