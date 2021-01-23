@@ -9,29 +9,33 @@ import {
   NavLinks,
 } from "./NavbarElements";
 
-
-
-const Navbar = ({setPage, setSwiper}) => {
-  
+const Navbar = ({ page, setPage, setSwiper }) => {
   return (
     <>
       <Nav>
         <NavbarContainer>
           <NavLogoContainer>
-          
-            <NavLogoItem onClick={() => setPage(true)}>Miguel Lopes</NavLogoItem>
+            <NavLogoItem
+              id="aboutLink"
+              page={page}
+              onClick={() => setPage(true)}
+            >
+              Miguel Lopes
+            </NavLogoItem>
             <NavLogoItem id="portfolioLink">Designer</NavLogoItem>
           </NavLogoContainer>
 
           <NavSlide>
-
             <NavItem>
-              <NavLinks id="productsLink" onClick={() => setSwiper("product")} >Product/</NavLinks>
+              <NavLinks id="productsLink" onClick={() => setSwiper("product")}>
+                Product/
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks id="graphicsLink" onClick={() => setSwiper("graphic")} >Graphic</NavLinks>
-            </NavItem> 
-            
+              <NavLinks id="graphicsLink" onClick={() => setSwiper("graphic")}>
+                Graphic
+              </NavLinks>
+            </NavItem>
           </NavSlide>
         </NavbarContainer>
       </Nav>

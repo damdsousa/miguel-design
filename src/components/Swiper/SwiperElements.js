@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-export const SwiperContainer = styled.div``;
+export const SwiperContainer = styled.div`
+  opacity: ${({page}) => (page ? '0' : '1')};
+  display: ${({page}) => (page ? 'none' : '')};
+
+`;
+
 
 export const ImgWrap = styled.div`
   margin: 20px auto;
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 95%;
 
   @media screen and (max-width: 768px) {
     width: 75%;

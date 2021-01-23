@@ -31,6 +31,10 @@ export const NavLogoContainer = styled.div`
 `;
 
 export const NavLogoItem = styled(LinkR)`
+
+  & #aboutLink {
+    color: ${({page}) => (page ? '#fff' : '#707070')}
+  }
   cursor: pointer;
   margin-left: 25px;
   margin-right:25px;
@@ -42,20 +46,6 @@ export const NavLogoItem = styled(LinkR)`
   }
 `;
 
-export const MobileIcon = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #fff;
-  }
-`;
 
 export const NavSlide = styled.ul`
   

@@ -4,14 +4,12 @@ import HeroSection from "../components/HeroSection";
 const Home = () => {
   const [page, setPage] = useState(false);
   const [swiper, setSwiper] = useState("full");
-//   const toggle = () => {
-//     setIsInvisible(!isVisible);
-//   };
+
 
   return (
     <>
       <Navbar
-        setPage={setPage} swiper={swiper} setSwiper={setSwiper}
+        page={page} setPage={setPage} swiper={swiper} setSwiper={setSwiper}
       />
       <HeroSection
         page={page} setPage={setPage} swiper={swiper} setSwiper={setSwiper}

@@ -7,12 +7,8 @@ const HeroSection = ({ page, setPage, setSwiper, swiper }) => {
     <HeroContainer>
       <HeroBlank></HeroBlank>
       <HeroActive>
-      
-        {page ? 
-        (<AboutSection setPage={setPage}/> ): <SwiperSection swiper={swiper} />
-        }
-        {/* {page && <AboutSection  setPage={setPage}/>}
-        {!page  && <SwiperSection />} */}
+        <AboutSection page={page} setPage={setPage} />
+        <SwiperSection swiper={swiper} page={page} />
       </HeroActive>
     </HeroContainer>
   );

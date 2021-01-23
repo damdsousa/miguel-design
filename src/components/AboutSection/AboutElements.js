@@ -1,16 +1,38 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 
-export const AboutContainer = styled.aside `
-    margin-top: 120px;
-    width:100%;
-    display:grid;
-    max-width: 720px;
-    transition-property: left, right;
-    transition-duration: 1s, 1s;
-    transition-delay: 0s, 1s;
-    ${'' /* display: ${({page}) => ({page} ? 'block' : 'none')};   */}
-`
+const slideIn = keyframes`
+  from{
+    left: -90%;
+  }
+  to {
+    left: 0%
+  }
+`;
+const slideOut = keyframes`
+  from{
+    left: 0%;
+  }
+  to {
+    left: -100%
+  }
+`;
+
+export const AboutContainer = styled.div`
+  position: relative;
+  margin-top: 120px;
+  width: 100%;
+  max-width: 720px;
+  display: ${({ page }) => (page ? "grid" : "none")};
+  animation: ${({ page }) =>
+    page
+      ? css`
+          ${slideIn} 0.5s linear
+        `
+      : css`
+          ${slideOut} 0.5s linear
+        `};
+`;
 export const Description = styled.p`
   margin: 0;
 `;
