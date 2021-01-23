@@ -1,7 +1,7 @@
 // import Swiper core and required components
 import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
 
-import { Swiper} from "swiper/react";
+import { Swiper } from "swiper/react";
 import { createSlides } from "./actions";
 
 // Import Swiper styles
@@ -13,8 +13,9 @@ import "swiper/components/effect-fade/effect-fade.scss";
 
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, Parallax, EffectFade]);
-function SwiperStd(start,numberOfSlides) {
-  return (<Swiper
+function SwiperStd(start, numberOfSlides) {
+  return (
+    <Swiper
       slidesPerView={1}
       loop={true}
       parallax={true}
@@ -41,19 +42,13 @@ function SwiperStd(start,numberOfSlides) {
   );
 }
 export const FullSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
-  return (
-    SwiperStd(0,29)
-  );
+  return SwiperStd(0, 29);
 };
 
 export const GraphicSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
-  return (
-      SwiperStd(7, 29)  
-  );
+  return SwiperStd(7, 29);
 };
 
 export const ProductSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
-  return (
-    SwiperStd(0,7)
-  );
+  return SwiperStd(0, 7);
 };

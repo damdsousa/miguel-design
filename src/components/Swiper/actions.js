@@ -17,7 +17,6 @@ export function createSlides(start, numberOfSlides) {
 
   const slides = [];
   for (let i = start; i < numberOfSlides; i += 1) {
-    console.log(slideImages[i]);
     slides.push(
       <SwiperSlide key={slideImages[i].id}>
         <ImgWrap>
