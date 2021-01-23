@@ -7,9 +7,11 @@ import {
   NavSlide,
   NavItem,
   NavLinks,
+  NavMobilePlus,
+  NavMobileMinus,
 } from "./NavbarElements";
 
-const Navbar = ({ page, setPage, setSwiper }) => {
+const Navbar = ({ mobile, setMobile, page, setPage, setSwiper }) => {
   return (
     <>
       <Nav>
@@ -17,15 +19,25 @@ const Navbar = ({ page, setPage, setSwiper }) => {
           <NavLogoContainer>
             <NavLogoItem
               id="aboutLink"
+              mobile={mobile}
               page={page}
               onClick={() => setPage(true)}
             >
               Miguel Lopes
             </NavLogoItem>
-            <NavLogoItem id="portfolioLink">Designer</NavLogoItem>
+            <NavLogoItem mobile={mobile} id="portfolioLink">
+              Designer
+            </NavLogoItem>
+
+            <NavMobileMinus mobile={mobile} onClick={() => setMobile(true)}>
+              -
+            </NavMobileMinus>
+            <NavMobilePlus mobile={mobile} onClick={() => setMobile(false)}>
+              +
+            </NavMobilePlus>
           </NavLogoContainer>
 
-          <NavSlide>
+          <NavSlide mobile={mobile}>
             <NavItem>
               <NavLinks id="productsLink" onClick={() => setSwiper("product")}>
                 Product/

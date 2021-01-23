@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   display: flex;
 
   position: sticky;
-  top: 0;  
+  top: 0;
   z-index: 10;
 
   @media screen and (max-width: 960px) {
@@ -22,8 +22,9 @@ export const NavbarContainer = styled.div`
   height: 80px;
   z-index: 1;
   width: 100%;
-
-
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 50% 50%;
+  }
 `;
 export const NavLogoContainer = styled.div`
   display: flex;
@@ -31,37 +32,72 @@ export const NavLogoContainer = styled.div`
 `;
 
 export const NavLogoItem = styled(LinkR)`
-
   & #aboutLink {
-    color: ${({page}) => (page ? '#fff' : '#707070')}
+    color: ${({ page }) => (page ? "#fff" : "#707070")};
   }
+
   cursor: pointer;
   margin-left: 25px;
-  margin-right:25px;
+  margin-right: 25px;
   text-decoration: none;
   white-space: nowrap;
   .disable-link {
-  pointer-events: none;
-  color: #707070
+    pointer-events: none;
+    color: #707070;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 520px) {
+    display: ${({ mobile }) => (mobile ? "" : "none")};
+   
   }
 `;
 
-
-export const NavSlide = styled.ul`
-  
+export const NavMobilePlus = styled(LinkR)`
+  display: ${({ mobile }) => (mobile ? "" : "none")};
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  @media screen and (max-width: 521px) {
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 521px) {
+    display: none;
+  }
+`;
+export const NavMobileMinus = styled(LinkR)`
+  display: ${({ mobile }) => (mobile ? "none" : "grid")};
+  margin-left: 20px;
+  @media screen and (min-width: 521px) {
+    display: none;
+  }
+`;
+export const NavSlide = styled.div`
   display: grid;
   grid-template-columns: 65px 65px auto;
   text-align: center;
-  
 
-  ${'' /* @media screen and (max-width: 768px) {
-    display: none;
-  } */}
+  @media screen and (max-width: 1024px) {
+    justify-content: end;
+    grid-template-columns: 65px 65px;
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    ${"" /* margin-right:20px; */}
+  }
+  @media screen and (max-width: 520px) {
+    display: ${({ mobile }) => (mobile ? "none" : "")};
+  }
 `;
 
-export const NavItem = styled.li`
-  list-style-type:none;
+export const NavItem = styled.div`
+  list-style-type: none;
   height: 80px;
+  
 `;
 
 export const NavLinks = styled(LinkR)`
@@ -78,7 +114,9 @@ export const NavLinks = styled(LinkR)`
   }
 
   .disable-link {
-  pointer-events: none;
-  color: #707070
+    pointer-events: none;
+    color: #707070;
   }
+
+  
 `;

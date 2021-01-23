@@ -14,13 +14,13 @@ const slideOut = keyframes`
     left: 0%;
   }
   to {
-    left: -100%
+    left: -90%
   }
 `;
 
 export const AboutContainer = styled.div`
   position: relative;
-  margin-top: 120px;
+  ${'' /* margin-top: 50px; */}
   width: 100%;
   max-width: 720px;
   display: ${({ page }) => (page ? "grid" : "none")};
@@ -32,6 +32,12 @@ export const AboutContainer = styled.div`
       : css`
           ${slideOut} 0.5s linear
         `};
+
+    @media screen and (max-width: 960px) {
+   
+    
+ 
+  }
 `;
 export const Description = styled.p`
   margin: 0;

@@ -4,15 +4,23 @@ import HeroSection from "../components/HeroSection";
 const Home = () => {
   const [page, setPage] = useState(false);
   const [swiper, setSwiper] = useState("full");
-
+  const [mobile, setMobile] = useState("none");
 
   return (
     <>
       <Navbar
-        page={page} setPage={setPage} swiper={swiper} setSwiper={setSwiper}
+        mobile={mobile}
+        setMobile={setMobile}
+        page={page}
+        setPage={setPage}
+        swiper={swiper}
+        setSwiper={setSwiper}
       />
       <HeroSection
-        page={page} setPage={setPage} swiper={swiper} setSwiper={setSwiper}
+        page={page}
+        setPage={setPage}
+        swiper={swiper}
+        setSwiper={setSwiper}
       />
     </>
   );

@@ -14,9 +14,9 @@
     url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.svg#Aktiv Grotesk")
       format("svg");
 }
-@import url('http://fonts.cdnfonts.com/css/neue-haas-grotesk-text-pro');
+@import url("http://fonts.cdnfonts.com/css/neue-haas-grotesk-text-pro");
 
-body{
+body {
   background: #000;
   font-family: "Neue Haas Grotesk Text Pro";
   color: #fff;
@@ -33,27 +33,31 @@ a:visited {
   color: #fff;
 }
 a:hover {
-  color:#a6a6a6;
+  color: #a6a6a6;
 }
 
 #button-prev {
-
-  color:#6a747c;
-  position:absolute;
-  height:85%;
-  left:4%;
-  --swiper-navigation-size:15px
-
+  color: #6a747c;
+  position: absolute;
+  height: 85%;
+  left: 4%;
+  --swiper-navigation-size: 15px;
 }
 
-#button-next{
-  color:#6a747c;
-  position:absolute;
-  left:6%;
-  height:85%;
-  --swiper-navigation-size:15px
-  }
+#button-next {
+  color: #6a747c;
+  position: absolute;
+  left: 6%;
+  height: 85%;
+  --swiper-navigation-size: 15px;
+}
 
-#button-about:hover{
-  color:#6a747c;
+#button-about:hover {
+  color: #6a747c;
+}
+
+@media only screen and (max-width: 600px) {
+  #button-next {
+    left: 8%;
+  }
 }
