@@ -6,12 +6,12 @@ import { SwiperContainer } from "./SwiperElements";
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, Parallax, EffectFade]);
 
-const SwiperSection = ({ page, swiper }) => {
+const SwiperSection = ({ page, swiper, setMySwiper }) => {
   return (
     <SwiperContainer page={page}>
-      {swiper === "full" && <FullSwiper />}
-      {swiper === "product" && <ProductSwiper />}
-      {swiper === "graphic" && <GraphicSwiper />}
+      {swiper === "full" && <FullSwiper setMySwiper={setMySwiper}/>}
+      {swiper === "product" && <ProductSwiper setMySwiper={setMySwiper}/>}
+      {swiper === "graphic" && <GraphicSwiper setMySwiper={setMySwiper}/>}
     </SwiperContainer>
   );
 };

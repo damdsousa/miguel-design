@@ -2,7 +2,7 @@ import React from "react";
 import AboutSection from "../AboutSection";
 import SwiperSection from "../Swiper";
 import { HeroContainer, HeroBlank, HeroActive } from "./HeroElements";
-const HeroSection = ({ page, setPage, setSwiper, swiper }) => {
+const HeroSection = ({ page, setPage, swiper}) => {
   return (
     <HeroContainer>
       <HeroBlank></HeroBlank>

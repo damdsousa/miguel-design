@@ -41,14 +41,14 @@ function SwiperStd(start, numberOfSlides) {
     </Swiper>
   );
 }
-export const FullSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
+export const FullSwiper = () => {
   return SwiperStd(0, 29);
 };
 
-export const GraphicSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
+export const GraphicSwiper = () => {
   return SwiperStd(7, 29);
 };
 
-export const ProductSwiper = ({ setSwiper, swiper, start, numberOfSlides }) => {
+export const ProductSwiper = () => {
   return SwiperStd(0, 7);
 };

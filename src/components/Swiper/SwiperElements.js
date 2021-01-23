@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 export const SwiperContainer = styled.div`
   opacity: ${({ page }) => (page ? "0" : "1")};
-  display: ${({ page }) => (page ? "none" : "")};
+  ${'' /* display: ${({ page }) => (page ? "none" : "")}; */}
+  position: ${({ page }) => (page ? "absolute" : "")};
+  top: ${({ page }) => (page ? "-1000px" : "")};
+  left: ${({ page }) => (page ? "-100px" : "")};
+  width:  ${({ page }) => (page ? "0px" : "")};
+  overflow:hidden;
 `;
 
 export const ImgWrap = styled.div`

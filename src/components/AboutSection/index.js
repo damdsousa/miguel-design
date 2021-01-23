@@ -2,7 +2,7 @@ import React from "react";
 
 
 import { Description, AboutLink, AboutContainer } from "./AboutElements";
-const AboutSection = ({setPage, page, swiper}) => {
+const AboutSection = ({setPage, page}) => {
   return (
     <AboutContainer page={page}>
       <Description>
