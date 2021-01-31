@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const SwiperContainer = styled.div`
-  opacity: ${({ page }) => (page ? "0" : "1")};
-  ${'' /* display: ${({ page }) => (page ? "none" : "")}; */}
-  position: ${({ page }) => (page ? "absolute" : "")};
+  ${'' /* z-index:-1; */}
+  ${'' /* opacity: ${({ page }) => (page ? "1" : "0")}; */}
+  ${'' /* position: ${({ page }) => (page ? "absolute" : "relative")};
   top: ${({ page }) => (page ? "-1000px" : "")};
   left: ${({ page }) => (page ? "-100px" : "")};
-  width:  ${({ page }) => (page ? "0px" : "")};
+  width:  ${({ page }) => (page ? "0px" : "")}; */}
+  ${'' /* transition: all 800 ms;  */}
   overflow:hidden;
+
 `;
 
 export const ImgWrap = styled.div`
@@ -15,7 +17,7 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 90%;
+  width: 100%;
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
@@ -23,11 +25,26 @@ export const Img = styled.img`
 `;
 
 export const ImgSubtitle = styled.div`
-  color: #6a747c;
+  color: rgb(120,120,120);
   position: absolute;
-  left: 80%;
-  bottom: 7.5%;
+  right: 3%;
+  bottom: 5%;
   @media screen and (max-width: 520px) {
-    left: 70%;
+    font-size: 12px;
+    left: 50%;
   }
+`;
+
+export const NavBack = styled.div`
+  ${'' /* display: none;
+  &:hover{
+    display:"";
+  } */}
+`;
+
+export const NavForward = styled.div`
+${'' /* display: none;
+  &:hover{
+    display:"";
+  } */}
 `;

@@ -9,9 +9,11 @@ import {
   NavLinks,
   NavMobilePlus,
   NavMobileMinus,
+  LogoItem,
+  MobileItem
 } from "./NavbarElements";
 
-const Navbar = ({ mobile, setMobile, page, setPage, setSwiper }) => {
+const Navbar = ({ mobile, setMobile, elements, setElements, setSwiper }) => {
   return (
     <>
       <Nav>
@@ -20,34 +22,32 @@ const Navbar = ({ mobile, setMobile, page, setPage, setSwiper }) => {
             <NavLogoItem
               id="aboutLink"
               mobile={mobile}
-              page={page}
-              onClick={() => setPage(true)}
+              elements={elements}
+              onClick={() =>{ setElements({swiper: false, about:true, id:1}); console.log(elements);}}
             >
               Miguel Lopes
             </NavLogoItem>
-            <NavLogoItem mobile={mobile} id="portfolioLink">
+            <LogoItem mobile={mobile} elements={elements}>
               Designer
-            </NavLogoItem>
-
+            </LogoItem>
+            <MobileItem>
             <NavMobileMinus mobile={mobile} onClick={() => setMobile(true)}>
               -
             </NavMobileMinus>
+            </MobileItem>
+            <MobileItem>
             <NavMobilePlus mobile={mobile} onClick={() => setMobile(false)}>
               +
             </NavMobilePlus>
+            </MobileItem>
           </NavLogoContainer>
 
           <NavSlide mobile={mobile}>
-            <NavItem>
-              <NavLinks id="productsLink" onClick={() => setSwiper("product")}>
-                Product/
-              </NavLinks>
+            <NavItem  elements={elements}>
+                Product/Graphic
             </NavItem>
-            <NavItem>
-              <NavLinks id="graphicsLink" onClick={() => setSwiper("graphic")}>
-                Graphic
-              </NavLinks>
-            </NavItem>
+
+              <NavLinks  elements={elements} href="mailto:miguel@miguellopes.info"> miguel@miguellopes.info </NavLinks> 
           </NavSlide>
         </NavbarContainer>
       </Nav>

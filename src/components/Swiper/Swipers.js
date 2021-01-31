@@ -3,7 +3,7 @@ import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
 
 import { Swiper } from "swiper/react";
 import { createSlides } from "./actions";
-
+import {NavBack, NavForward} from "./SwiperElements"
 // Import Swiper styles
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -19,36 +19,27 @@ function SwiperStd(start, numberOfSlides) {
       slidesPerView={1}
       loop={true}
       parallax={true}
-      navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      }}
+      // navigation={{
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // }}
       effect="fade"
       speed={800}
       autoplay={{ delay: "2500", disableOnInteraction: false }}
-      observer={true}
-      observeParents={true}
     >
       {createSlides(start, numberOfSlides)}
-      <div
+      {/* <div
         class="swiper-button-prev swiper-button-white"
         id="button-prev"
       ></div>
       <div
-        class="swiper-button-next swiper-button-white"
-        id="button-next"
-      ></div>
+       class="swiper-button-next swiper-button-white"
+         id="button-next"
+      ></div>  */}
     </Swiper>
   );
 }
 export const FullSwiper = () => {
-  return SwiperStd(0, 29);
+  return SwiperStd(0, 11);
 };
 
-export const GraphicSwiper = () => {
-  return SwiperStd(7, 29);
-};
-
-export const ProductSwiper = () => {
-  return SwiperStd(0, 7);
-};

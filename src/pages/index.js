@@ -2,23 +2,27 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 const Home = () => {
-  const [page, setPage] = useState(false);
+  const [elements, setElements] = useState({
+    swiper: true,
+    about: false,
+    id:0
+  });
   const [swiper, setSwiper] = useState("full");
   const [mobile, setMobile] = useState("none");
-
+ 
   return (
     <>
       <Navbar
         mobile={mobile}
         setMobile={setMobile}
-        page={page}
-        setPage={setPage}
+        elements={elements}
+        setElements={setElements}
         swiper={swiper}
         setSwiper={setSwiper}
       />
       <HeroSection
-        page={page}
-        setPage={setPage}
+        elements={elements}
+        setElements={setElements}
         swiper={swiper}
         setSwiper={setSwiper}
       />

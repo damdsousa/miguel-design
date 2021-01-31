@@ -10,7 +10,7 @@ export function createSlides(start, numberOfSlides) {
   for (let i = start; i < numberOfSlides; i += 1) {
     slideImages[i] = {
       id: "slide" + (i + 1),
-      img: require(`../../assets/images/2020-${69 + i}.png`).default,
+      img: require(`../../assets/images/miguel-lopes-${1 + i}.png`).default,
       alt: "slide" + (i + 1),
     };
   }
