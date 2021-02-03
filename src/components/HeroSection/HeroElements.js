@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.div`
   margin-top: 80px;
-  grid-template-columns: 30vw 65vw;
+  margin-right: 4vw;
+  margin-left: 4vw;
+  grid-template-columns: 26vw 64.9vw;
   align-items: center;
   display: grid;
   @media screen and (max-width: 960px) {
@@ -17,12 +19,7 @@ export const HeroBlank = styled.div`
 `;
 
 export const HeroActive = styled.div`
-  margin-left: 20px;
-
-  @media screen and (max-width: 960px) {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  
 `;
 
 

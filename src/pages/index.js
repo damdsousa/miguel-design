@@ -7,9 +7,12 @@ const Home = () => {
     about: false,
     id:0
   });
-  const [swiper, setSwiper] = useState("full");
+  const [swiper, setSwiper] = useState(null);
   const [mobile, setMobile] = useState("none");
- 
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [leftHover, setLeftHover] = useState(false);
+  const [rightHover, setRightHover] = useState(false);
+
   return (
     <>
       <Navbar
@@ -18,13 +21,19 @@ const Home = () => {
         elements={elements}
         setElements={setElements}
         swiper={swiper}
-        setSwiper={setSwiper}
+        setSlideIndex={setSlideIndex}
       />
       <HeroSection
         elements={elements}
         setElements={setElements}
         swiper={swiper}
         setSwiper={setSwiper}
+        slideIndex={slideIndex}
+        setSlideIndex={setSlideIndex}
+        leftHover={leftHover}
+        setLeftHover={setLeftHover}
+        rightHover={rightHover}
+        setRightHover={setRightHover}
       />
     </>
   );

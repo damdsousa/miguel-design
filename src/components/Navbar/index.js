@@ -10,10 +10,17 @@ import {
   NavMobilePlus,
   NavMobileMinus,
   LogoItem,
-  MobileItem
+  MobileItem,
 } from "./NavbarElements";
 
-const Navbar = ({ mobile, setMobile, elements, setElements, setSwiper }) => {
+const Navbar = ({
+  mobile,
+  setMobile,
+  elements,
+  setElements,
+  setSlideIndex,
+  swiper,
+}) => {
   return (
     <>
       <Nav>
@@ -23,31 +30,53 @@ const Navbar = ({ mobile, setMobile, elements, setElements, setSwiper }) => {
               id="aboutLink"
               mobile={mobile}
               elements={elements}
-              onClick={() =>{ setElements({swiper: false, about:true, id:1}); console.log(elements);}}
+              onClick={() => {
+                setElements({ swiper: false, about: true, id: 1 });
+                setSlideIndex(swiper.activeIndex);
+                setMobile(false);
+                console.log("active slide" + swiper.activeIndex);
+              }}
             >
               Miguel Lopes
             </NavLogoItem>
-            <LogoItem mobile={mobile} elements={elements}>
+            <LogoItem mobile={mobile} page={elements.about}>
               Designer
             </LogoItem>
             <MobileItem>
-            <NavMobileMinus mobile={mobile} onClick={() => setMobile(true)}>
-              -
-            </NavMobileMinus>
+              <NavMobileMinus
+                page={elements.about}
+                mobile={mobile}
+                onClick={() => {
+                  setMobile(true);
+                  setElements({ swiper: true, about: false, id: 0 });
+                }}
+              >
+                -
+              </NavMobileMinus>
             </MobileItem>
             <MobileItem>
-            <NavMobilePlus mobile={mobile} onClick={() => setMobile(false)}>
-              +
-            </NavMobilePlus>
+              <NavMobilePlus
+                page={elements.about}
+                mobile={mobile}
+                onClick={() => {
+                  setMobile(false);
+                  setElements({ swiper: false, about: true, id: 1 });
+                  setSlideIndex(swiper.activeIndex);
+                }}
+              >
+                +
+              </NavMobilePlus>
             </MobileItem>
           </NavLogoContainer>
 
           <NavSlide mobile={mobile}>
-            <NavItem  elements={elements}>
-                Product/Graphic
-            </NavItem>
-
-              <NavLinks  elements={elements} href="mailto:miguel@miguellopes.info"> miguel@miguellopes.info </NavLinks> 
+            <NavItem page={elements.about}>Product/Graphic</NavItem>
+            <NavLinks
+              page={elements.about}
+              href="mailto:miguel@miguellopes.info"
+            >
+              miguel@miguellopes.info
+            </NavLinks>
           </NavSlide>
         </NavbarContainer>
       </Nav>

@@ -1,36 +1,37 @@
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
-import { animated } from 'react-spring'
+import { animated } from "react-spring";
 
-
-export const AboutContainer = styled(animated.div)`
+export const AboutContainer = styled.div`
   margin-top: 50px;
-  width: 95%;
+  width: 92%;
   max-width: 720px;
   display: grid;
-  position:absolute;
-  margin-left:27px;
-  left:30vw;
-  top:20%;
+  position: absolute;
+  margin-left: 8px;
+  left: 30vw;
+  top: 20%;
 
- 
-
-  ${'' /* position:relative; */}
-  ${'' /* opacity: ${({ page }) => (page ? "1" : "0")};
+  ${"" /* position:relative; */}
+  ${
+    "" /* opacity: ${({ page }) => (page ? "1" : "0")};
   position: ${({ page }) => (page ? "relative" : "absolute")};
   top: ${({ page }) => (page ? "" : "-1000px")};
-  left: ${({ page }) => (page ? "" : "-100px")}; */}
+  left: ${({ page }) => (page ? "" : "-100px")}; */
+  }
   @media screen and (max-width: 1200px) {
-    width:95%;
-
+    width: 90%;
   }
   @media screen and (max-width: 960px) {
-    left:0;
-    margin-left:30px;
-    margin-right:auto;
-    width:91%;
-
-   
+    left: 8px;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    width: 90%;
+  }
+  @media screen and (max-width: 560px) {
+    margin-top: 20px;
+    margin-left: 4vw;
+    width: 87%;
   }
 `;
 export const Description = styled.p`
@@ -43,15 +44,22 @@ export const AboutLink = styled(LinkR)`
   text-decoration: none;
   cursor: pointer;
   position: relative;
-  height: 110%;
+  height: 105%;
   left: 0;
   --swiper-navigation-size: 15px;
-  
-  &.visited {
-    color: #fff;
-  }
+
   &:hover {
-    text-decoration: underline;
-    color: #fff;
+    text-decoration: none;
+    color: rgb(120, 120, 120);
+  }
+
+  @media screen and (max-width: 520px) {
+    display: none;
+  }
+`;
+
+export const MailLink = styled.a`
+  @media screen and (min-width: 521px) {
+    display: none;
   }
 `;

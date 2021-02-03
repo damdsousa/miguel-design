@@ -3,54 +3,62 @@ import { Link as LinkR } from "react-router-dom";
 
 export const Nav = styled.nav`
   height: 80px;
-  /*margin-top: -80px;*/
   display: flex;
-
-  position: sticky;
   top: 0;
-  z-index: 10;
-
-  @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
-  }
+  margin-right: 4vw;
+  margin-left: 4vw;
 `;
 
 export const NavbarContainer = styled.div`
-  display: grid;
-  grid-template-columns: 30vw 65vw;
+  display: inline-grid;
+  ${"" /* grid-template-columns: 30vw 64.6vw; */}
+  grid-template-columns: 26vw 64.9vw;
+  ${"" /* justify-items: stretch; */}
   align-items: center;
+
   height: 80px;
-  z-index: 1;
-  width: 100%;
+
   @media screen and (max-width: 960px) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 31vw 58.9vw;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 35vw 54.9vw;
+  }
+  @media screen and (max-width: 670px) {
+    grid-template-columns: 39vw 50.7vw;
+  }
+  }
+  @media screen and (max-width: 575px) {
+    grid-template-columns: 92vw;
   }
 `;
 export const NavLogoContainer = styled.div`
+  justify-self: start;
   display: flex;
   justify-content: flex-start;
+  align-items:center;
+`;
 
+export const NavSlide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  @media screen and (max-width: 575px) {
+    display: none;
+  } 
+  }
 `;
 
 export const NavLogoItem = styled(LinkR)`
   &:hover {
-    text-decoration: underline;
-    color: #fff;
+    color: rgb(120, 120, 120);
   }
-
+  white-space: nowrap;
   cursor: pointer;
-  margin-left: 25px;
   margin-right: 25px;
   text-decoration: none;
   white-space: nowrap;
-
-  @media screen and (max-width: 768px) {
-    margin-left: 20px;
-  }
-
-  @media screen and (max-width: 520px) {
-    display: ${({ mobile }) => (mobile ? "" : "none")};
-  }
 `;
 
 export const LogoItem = styled.div`
@@ -60,85 +68,45 @@ export const LogoItem = styled.div`
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
 
   @media screen and (max-width: 768px) {
-    margin-left: 20px;
-  }
-
-  @media screen and (max-width: 520px) {
-    display: ${({ mobile }) => (mobile ? "" : "none")};
   }
 `;
 export const MobileItem = styled.div`
-
-`
+ font-size: 20px;
+  color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
+  position: absolute;
+  right: 4vw;
+  margin-right: 8px;
+  @media screen and (min-width: 575px) {
+    display: none;
+  }
+`;
 export const NavMobilePlus = styled(LinkR)`
   display: ${({ mobile }) => (mobile ? "" : "none")};
-  position: absolute;
-  right: 0;
-  margin-right: 30px;
-  
-  @media screen and (max-width: 521px) {
-    margin-right: 20px;
-  }
-  @media screen and (min-width: 521px) {
-    display: none;
-  }
 `;
 export const NavMobileMinus = styled(LinkR)`
-  display: ${({ mobile }) => (mobile ? "none" : "grid")};
-  margin-left: 20px;
-
-  @media screen and (min-width: 521px) {
-    display: none;
-  }
-`;
-export const NavSlide = styled.div`
-  display: grid;
-  grid-template-columns: 65px 65px auto;
-  text-align: center;
-
-  
-  @media screen and (max-width: 520px) {
-    display: ${({ mobile }) => (mobile ? "none" : "")};
-  }
+  display: ${({ mobile }) => (mobile ? "none" : "")};
 `;
 
 export const NavItem = styled.div`
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
   list-style-type: none;
   height: 80px;
-  display: flex;
-  align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
   height: 100%;
   @media screen and (max-width: 960px) {
-    visibility:hidden;
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-right: 30px;
+    visibility: hidden;
   }
 `;
 
 export const NavLinks = styled.a`
+
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
-  margin-right: 4vw;
   cursor: pointer;
-  position: absolute;
-  right: 0;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
   }
-  .disable-link {
-    pointer-events: none;
-    color: #707070;
-  }
+ }
 
-  @media screen and (max-width: 1024px) {
-    justify-content: end;
-    grid-template-columns: 65px 65px;
-    margin-right: 30px;
-  }
 `;

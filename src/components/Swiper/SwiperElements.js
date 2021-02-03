@@ -9,19 +9,24 @@ export const SwiperContainer = styled.div`
   width:  ${({ page }) => (page ? "0px" : "")}; */}
   ${'' /* transition: all 800 ms;  */}
   overflow:hidden;
+  
 
 `;
 
 export const ImgWrap = styled.div`
   margin: 0px auto;
+
 `;
 
 export const Img = styled.img`
   width: 100%;
-  @media screen and (max-width: 1024px) {
+  ${'' /* @media screen and (max-width: 1024px) {
     width: 100%;
+  } */}
+  @media screen and (max-width: 568px) {
+    ${'' /* aspect-ratio:12/9; */}
+    height: 250px;
   }
-  
 `;
 
 export const ImgSubtitle = styled.div`
@@ -29,10 +34,8 @@ export const ImgSubtitle = styled.div`
   position: absolute;
   right: 3%;
   bottom: 5%;
-  @media screen and (max-width: 520px) {
-    font-size: 12px;
-    left: 50%;
-  }
+  white-space: nowrap;
+
 `;
 
 export const NavBack = styled.div`
