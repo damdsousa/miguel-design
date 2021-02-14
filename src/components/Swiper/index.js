@@ -55,15 +55,17 @@ const SwiperSection = ({
 
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
-    if (swiper ){let refposition = inputRef.current.getBoundingClientRect();
+    if (elements.swiper) {
+      let refposition = inputRef.current.getBoundingClientRect();
       setSwiperPosition({
         left: refposition.left,
         right: refposition.right,
         top: refposition.top,
         bottom: refposition.bottom,
       });
-      let middle = refposition.left + (refposition.right - refposition.left) / 2;
-  
+      let middle =
+        refposition.left + (refposition.right - refposition.left) / 2;
+
       if (e.clientY > refposition.top && e.clientY < refposition.bottom) {
         if (e.clientX > refposition.left && e.clientX < middle) {
           setHidden(1);
@@ -74,13 +76,13 @@ const SwiperSection = ({
         }
       } else {
         setHidden(0);
-      }}
-    
+      }
+    }
   };
 
   return (
     <SwiperContainer
-      cursor = {hidden}
+      cursor={hidden}
       page={elements.swiper}
       ref={inputRef}
       onClick={() => {
