@@ -7,6 +7,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 const HeroSection = ({
   elements,
   setElements,
+  mobile,
+  setMobile,
   swiper,
   setSwiper,
   slideIndex,
@@ -47,7 +49,7 @@ const HeroSection = ({
               timeout={{ enter: 1000, exit: 1000 }}
               classNames="aboutM"
             >
-              <AboutSection elements={elements} setElements={setElements} />
+              <AboutSection elements={elements} setElements={setElements} setMobile={setMobile} />
             </CSSTransition>
           )}
         </TransitionGroup>

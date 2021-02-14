@@ -10,7 +10,7 @@ export function createSlides(start, numberOfSlides) {
   for (let i = start; i < numberOfSlides; i += 1) {
     slideImages[i] = {
       id: "slide" + (i + 1),
-      img: require(`../../assets/images/miguel-lopes-${1 + i}.png`).default,
+      img: require(`../../assets/images/projetos-${1 + i}.png`).default,
       alt: "slide" + (i + 1),
     };
   }
@@ -22,7 +22,7 @@ export function createSlides(start, numberOfSlides) {
         <ImgWrap>
           <Img src={slideImages[i].img} alt={slideImages[i].alt} />
         </ImgWrap>
-        <ImgSubtitle class="subtitle">{subtitles[i]}</ImgSubtitle>
+        <ImgSubtitle className="subtitle">{subtitles[i]}</ImgSubtitle>
       </SwiperSlide>
     );
   }

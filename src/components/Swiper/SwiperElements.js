@@ -9,8 +9,8 @@ export const SwiperContainer = styled.div`
   width:  ${({ page }) => (page ? "0px" : "")}; */}
   ${'' /* transition: all 800 ms;  */}
   overflow:hidden;
-  
-
+  ${'' /* cursor: url("left-arrow.png"), auto; */}
+  cursor: ${({cursor }) => ((cursor===1) ? "url(left-arrow.png), auto" : (cursor===2) ? "url(right-arrow.png), auto" : "none")}
 `;
 
 export const ImgWrap = styled.div`
@@ -25,7 +25,7 @@ export const Img = styled.img`
   } */}
   @media screen and (max-width: 568px) {
     ${'' /* aspect-ratio:12/9; */}
-    height: 250px;
+    ${'' /* height: 230px; */}
   }
 `;
 

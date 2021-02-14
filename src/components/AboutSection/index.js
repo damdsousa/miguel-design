@@ -3,7 +3,7 @@ import "swiper/components/navigation/navigation.scss";
 
 import { Description, AboutLink, AboutContainer, MailLink } from "./AboutElements";
 
-const AboutSection = ({ setElements, elements }) => {
+const AboutSection = ({ setElements, elements, setMobile }) => {
   return (
     <AboutContainer elements={elements}>
       <Description>
@@ -31,6 +31,7 @@ const AboutSection = ({ setElements, elements }) => {
       <AboutLink
         onClick={() => {
           setElements({ swiper: true, about: false, id: 0 });
+          setMobile(true);
         }}
         className="swiper-button-prev swiper-button-white"
       ></AboutLink>

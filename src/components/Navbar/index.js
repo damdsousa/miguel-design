@@ -29,12 +29,13 @@ const Navbar = ({
             <NavLogoItem
               id="aboutLink"
               mobile={mobile}
-              elements={elements}
+              page={elements.about}
               onClick={() => {
-                setElements({ swiper: false, about: true, id: 1 });
-                setSlideIndex(swiper.activeIndex);
-                setMobile(false);
-                console.log("active slide" + swiper.activeIndex);
+                if (mobile) {
+                  setElements({ swiper: false, about: true, id: 1 });
+                  setSlideIndex(swiper.activeIndex);
+                  setMobile(false);
+                }
               }}
             >
               Miguel Lopes
@@ -42,9 +43,8 @@ const Navbar = ({
             <LogoItem mobile={mobile} page={elements.about}>
               Designer
             </LogoItem>
-            <MobileItem>
+            <MobileItem page={elements.about}>
               <NavMobileMinus
-                page={elements.about}
                 mobile={mobile}
                 onClick={() => {
                   setMobile(true);
@@ -56,7 +56,6 @@ const Navbar = ({
             </MobileItem>
             <MobileItem>
               <NavMobilePlus
-                page={elements.about}
                 mobile={mobile}
                 onClick={() => {
                   setMobile(false);

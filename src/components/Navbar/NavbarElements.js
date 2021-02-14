@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
 
 export const Nav = styled.nav`
   height: 80px;
@@ -7,6 +6,7 @@ export const Nav = styled.nav`
   top: 0;
   margin-right: 4vw;
   margin-left: 4vw;
+
 `;
 
 export const NavbarContainer = styled.div`
@@ -50,9 +50,10 @@ export const NavSlide = styled.div`
   }
 `;
 
-export const NavLogoItem = styled(LinkR)`
+export const NavLogoItem = styled.a`
   &:hover {
-    color: rgb(120, 120, 120);
+    color: ${({ page }) => (page ? "#fff" : "rgb(120, 120, 120)")};
+    cursor: ${({ page }) => (page ? "initial" : "")};
   }
   white-space: nowrap;
   cursor: pointer;
@@ -71,8 +72,8 @@ export const LogoItem = styled.div`
   }
 `;
 export const MobileItem = styled.div`
- font-size: 20px;
-  color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
+  font-size: 25px;
+  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   position: absolute;
   right: 4vw;
   margin-right: 8px;
@@ -80,11 +81,12 @@ export const MobileItem = styled.div`
     display: none;
   }
 `;
-export const NavMobilePlus = styled(LinkR)`
+export const NavMobilePlus = styled.a`
   display: ${({ mobile }) => (mobile ? "" : "none")};
 `;
-export const NavMobileMinus = styled(LinkR)`
+export const NavMobileMinus = styled.a`
   display: ${({ mobile }) => (mobile ? "none" : "")};
+  color: rgb(120, 120, 120);
 `;
 
 export const NavItem = styled.div`

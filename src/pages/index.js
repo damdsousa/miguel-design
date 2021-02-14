@@ -8,7 +8,7 @@ const Home = () => {
     id:0
   });
   const [swiper, setSwiper] = useState(null);
-  const [mobile, setMobile] = useState("none");
+  const [mobile, setMobile] = useState(true);
   const [slideIndex, setSlideIndex] = useState(0);
   const [leftHover, setLeftHover] = useState(false);
   const [rightHover, setRightHover] = useState(false);
@@ -26,6 +26,7 @@ const Home = () => {
       <HeroSection
         elements={elements}
         setElements={setElements}
+        setMobile={setMobile}
         swiper={swiper}
         setSwiper={setSwiper}
         slideIndex={slideIndex}
