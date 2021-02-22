@@ -3,37 +3,20 @@ import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
 import { SwiperContainer } from "./SwiperElements";
 import { Swiper } from "swiper/react";
 import { createSlides } from "./actions";
-import { NavBack, NavForward } from "./SwiperElements";
+import { isMobile } from "react-device-detect";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/effect-fade/effect-fade.scss";
 
+
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, Parallax, EffectFade]);
 
-const SwiperSection = ({
-  elements,
-  swiper,
-  setSwiper,
-  slideIndex,
-  leftHover,
-  setLeftHover,
-  rightHover,
-  setRightHover,
-}) => {
-  // leaveMouse = () => {
-  //   setRightHover=false;
-  //   setLeftHover=false;
-  // }
+const SwiperSection = ({ elements, swiper, setSwiper, slideIndex }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [swiperPosition, setSwiperPosition] = useState({
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  });
+
   const [hidden, setHidden] = useState(0);
   const inputRef = useRef();
 
@@ -43,7 +26,7 @@ const SwiperSection = ({
     console.log("hidden" + hidden);
 
     return () => removeEventListeners();
-  }, []);
+  });
 
   const addEventListeners = () => {
     document.addEventListener("mousemove", onMouseMove);
@@ -55,21 +38,19 @@ const SwiperSection = ({
 
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
-    if (elements.swiper) {
-      let refposition = inputRef.current.getBoundingClientRect();
-      setSwiperPosition({
-        left: refposition.left,
-        right: refposition.right,
-        top: refposition.top,
-        bottom: refposition.bottom,
-      });
+    if (inputRef.current) {
+      let referencePosition = inputRef.current.getBoundingClientRect();
       let middle =
-        refposition.left + (refposition.right - refposition.left) / 2;
+        referencePosition.left +
+        (referencePosition.right - referencePosition.left) / 2;
 
-      if (e.clientY > refposition.top && e.clientY < refposition.bottom) {
-        if (e.clientX > refposition.left && e.clientX < middle) {
+      if (
+        e.clientY > referencePosition.top &&
+        e.clientY < referencePosition.bottom
+      ) {
+        if (e.clientX > referencePosition.left && e.clientX < middle) {
           setHidden(1);
-        } else if (e.clientX > middle && e.clientX < refposition.right) {
+        } else if (e.clientX > middle && e.clientX < referencePosition.right) {
           setHidden(2);
         } else {
           setHidden(0);
@@ -97,15 +78,12 @@ const SwiperSection = ({
         slidesPerView={1}
         loop={true}
         parallax={true}
+        autoHeight={true} 
         onSlideChange={() => {
           console.log(slideIndex);
           console.log(swiper);
         }}
         initialSlide={slideIndex}
-        // navigation={{
-        //   nextEl: ".swiper-button-next",
-        //   prevEl: ".swiper-button-prev",
-        // }}
         onSwiper={(swiper) => {
           console.log(swiper);
           slideIndex = swiper.activeIndex;
@@ -115,15 +93,7 @@ const SwiperSection = ({
         speed={800}
         autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
-        {createSlides(0, 24)}
-        {/* <div
-        class="swiper-button-prev swiper-button-white"
-        id="button-prev"
-      ></div>
-      <div
-       class="swiper-button-next swiper-button-white"
-         id="button-next"
-      ></div>  */}
+        {createSlides(0, 32, isMobile)}
       </Swiper>
     </SwiperContainer>
   );

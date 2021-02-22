@@ -28,13 +28,13 @@ const AboutSection = ({ setElements, elements, setMobile }) => {
         @miguellopes
       </a>
       <MailLink id="mail" href="mailto:miguel@miguellopes.info">miguel@miguellopes.info</MailLink>
-      <AboutLink
+      {/* <AboutLink
         onClick={() => {
-          setElements({ swiper: true, about: false, id: 0 });
+          setElements({ swiper: true, about: false });
           setMobile(true);
         }}
         className="swiper-button-prev swiper-button-white"
-      ></AboutLink>
+      ></AboutLink> */}
     </AboutContainer>
   );
 };

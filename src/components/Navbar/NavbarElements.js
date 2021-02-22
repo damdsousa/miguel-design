@@ -4,46 +4,41 @@ export const Nav = styled.nav`
   height: 80px;
   display: flex;
   top: 0;
-  margin-right: 4vw;
-  margin-left: 4vw;
-
+  margin-right: 3vw;
+  margin-left: 3vw;
 `;
 
 export const NavbarContainer = styled.div`
   display: inline-grid;
-  ${"" /* grid-template-columns: 30vw 64.6vw; */}
-  grid-template-columns: 26vw 64.9vw;
-  ${"" /* justify-items: stretch; */}
+  grid-template-columns: 27vw 65.9vw;
   align-items: center;
-
   height: 80px;
-
   @media screen and (max-width: 960px) {
-    grid-template-columns: 31vw 58.9vw;
+    grid-template-columns: 32vw 59.9vw;
   }
   @media screen and (max-width: 768px) {
-    grid-template-columns: 35vw 54.9vw;
+    grid-template-columns: 36vw 55.9vw;
   }
   @media screen and (max-width: 670px) {
-    grid-template-columns: 39vw 50.7vw;
+    grid-template-columns: 40vw 51.7vw;
   }
   }
   @media screen and (max-width: 575px) {
-    grid-template-columns: 92vw;
+    grid-template-columns: 94vw;
   }
 `;
+
 export const NavLogoContainer = styled.div`
   justify-self: start;
   display: flex;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
 `;
 
 export const NavSlide = styled.div`
   display: flex;
   justify-content: space-between;
   text-align: center;
-
   @media screen and (max-width: 575px) {
     display: none;
   } 
@@ -52,8 +47,9 @@ export const NavSlide = styled.div`
 
 export const NavLogoItem = styled.a`
   &:hover {
-    color: ${({ page }) => (page ? "#fff" : "rgb(120, 120, 120)")};
-    cursor: ${({ page }) => (page ? "initial" : "")};
+    ${'' /* color: ${({ page }) => (page ? "#fff" : "rgb(120, 120, 120)")}; */}
+    ${'' /* color: rgb(120, 120, 120); */}
+    ${'' /* cursor: ${({ page }) => (page ? "initial" : "")}; */}
   }
   white-space: nowrap;
   cursor: pointer;
@@ -67,13 +63,12 @@ export const LogoItem = styled.div`
   margin-right: 25px;
   white-space: nowrap;
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
-
   @media screen and (max-width: 768px) {
   }
 `;
+
 export const MobileItem = styled.div`
   font-size: 25px;
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   position: absolute;
   right: 4vw;
   margin-right: 8px;
@@ -81,9 +76,11 @@ export const MobileItem = styled.div`
     display: none;
   }
 `;
+
 export const NavMobilePlus = styled.a`
   display: ${({ mobile }) => (mobile ? "" : "none")};
 `;
+
 export const NavMobileMinus = styled.a`
   display: ${({ mobile }) => (mobile ? "none" : "")};
   color: rgb(120, 120, 120);
@@ -101,14 +98,11 @@ export const NavItem = styled.div`
 `;
 
 export const NavLinks = styled.a`
-
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
   cursor: pointer;
-
   &:hover {
     text-decoration: none;
     color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
   }
  }
-
 `;

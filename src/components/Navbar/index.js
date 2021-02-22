@@ -31,10 +31,18 @@ const Navbar = ({
               mobile={mobile}
               page={elements.about}
               onClick={() => {
-                if (mobile) {
-                  setElements({ swiper: false, about: true, id: 1 });
+                let index = 0
+                if (index === elements.index) {
+                  index = 1;
+                }
+                setElements({
+                  swiper: !elements.swiper,
+                  about: !elements.about,
+                  index: index
+                });
+                setMobile(!mobile);
+                if (elements.swiper) {
                   setSlideIndex(swiper.activeIndex);
-                  setMobile(false);
                 }
               }}
             >
@@ -48,7 +56,7 @@ const Navbar = ({
                 mobile={mobile}
                 onClick={() => {
                   setMobile(true);
-                  setElements({ swiper: true, about: false, id: 0 });
+                  setElements({ swiper: true, about: false });
                 }}
               >
                 -
@@ -59,7 +67,7 @@ const Navbar = ({
                 mobile={mobile}
                 onClick={() => {
                   setMobile(false);
-                  setElements({ swiper: false, about: true, id: 1 });
+                  setElements({ swiper: false, about: true });
                   setSlideIndex(swiper.activeIndex);
                 }}
               >

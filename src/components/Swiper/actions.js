@@ -5,14 +5,25 @@ import { ImgWrap, Img, ImgSubtitle } from "./SwiperElements";
 
 import { subtitles } from "./Data.js";
 
-export function createSlides(start, numberOfSlides) {
+export function createSlides(start, numberOfSlides, isMobile) {
   const slideImages = [];
-  for (let i = start; i < numberOfSlides; i += 1) {
-    slideImages[i] = {
-      id: "slide" + (i + 1),
-      img: require(`../../assets/images/projetos-${1 + i}.png`).default,
-      alt: "slide" + (i + 1),
-    };
+  if (isMobile) {
+    for (let i = start; i < numberOfSlides; i += 1) {
+      slideImages[i] = {
+        id: "slide" + (i + 1),
+        img: require(`../../assets/images/sizeB/miguel-lopes-${1 + i}.png`)
+          .default,
+        alt: "slide" + (i + 1),
+      };
+    }
+  } else {
+    for (let i = start; i < numberOfSlides; i += 1) {
+      slideImages[i] = {
+        id: "slide" + (i + 1),
+        img: require(`../../assets/images/miguel-lopes-${1 + i}.png`).default,
+        alt: "slide" + (i + 1),
+      };
+    }
   }
 
   const slides = [];

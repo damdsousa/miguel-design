@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
-import { animated } from "react-spring";
 
 export const AboutContainer = styled.div`
   margin-top: 50px;
@@ -11,14 +9,6 @@ export const AboutContainer = styled.div`
   margin-left: 8px;
   left: 30vw;
   top: 20%;
-
-  ${"" /* position:relative; */}
-  ${
-    "" /* opacity: ${({ page }) => (page ? "1" : "0")};
-  position: ${({ page }) => (page ? "relative" : "absolute")};
-  top: ${({ page }) => (page ? "" : "-1000px")};
-  left: ${({ page }) => (page ? "" : "-100px")}; */
-  }
   @media screen and (max-width: 1200px) {
     width: 90%;
   }
@@ -34,11 +24,12 @@ export const AboutContainer = styled.div`
     width: 87%;
   }
 `;
+
 export const Description = styled.p`
   margin: 0;
 `;
 
-export const AboutLink = styled(LinkR)`
+export const AboutLink = styled.a`
   margin-top: 25px;
   color: #fff;
   text-decoration: none;
@@ -47,12 +38,10 @@ export const AboutLink = styled(LinkR)`
   height: 105%;
   left: 0;
   --swiper-navigation-size: 15px;
-
   &:hover {
     text-decoration: none;
     color: rgb(120, 120, 120);
   }
-
   @media screen and (max-width: 520px) {
     display: none;
   }
