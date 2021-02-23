@@ -19,7 +19,8 @@ export const AboutContainer = styled.div`
     width: 90%;
   }
   @media screen and (max-width: 560px) {
-    margin-top: 20px;
+    top: 9%;
+    margin-top: 0px;
     margin-left: 4vw;
     width: 87%;
   }
@@ -27,6 +28,7 @@ export const AboutContainer = styled.div`
 
 export const Description = styled.p`
   margin: 0;
+  
 `;
 
 export const AboutLink = styled.a`

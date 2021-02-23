@@ -7,7 +7,7 @@ const AboutSection = ({ setElements, elements, setMobile }) => {
   return (
     <AboutContainer elements={elements}>
       <Description>
-        Graduated in ESAD.cr currently living in Lisbon, Portugal
+        Graduated in ESAD.cr currently living in Lisbon, Portugal.
       </Description>
       <Description>
         His work ranges from installation/urban requalification to graphic and

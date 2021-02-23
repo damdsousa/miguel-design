@@ -6,6 +6,9 @@ export const Nav = styled.nav`
   top: 0;
   margin-right: 3vw;
   margin-left: 3vw;
+  @media screen and (max-width: 575px) {
+    height: 50px;
+  }
 `;
 
 export const NavbarContainer = styled.div`
@@ -25,6 +28,7 @@ export const NavbarContainer = styled.div`
   }
   @media screen and (max-width: 575px) {
     grid-template-columns: 94vw;
+    height: 30px;
   }
 `;
 
@@ -56,6 +60,9 @@ export const NavLogoItem = styled.a`
   margin-right: 25px;
   text-decoration: none;
   white-space: nowrap;
+  @media screen and (max-width: 575px) {
+    margin-right: 20px;
+  }
 `;
 
 export const LogoItem = styled.div`
@@ -63,14 +70,15 @@ export const LogoItem = styled.div`
   margin-right: 25px;
   white-space: nowrap;
   color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 575px) {
+    margin-left: 0px;
   }
 `;
 
 export const MobileItem = styled.div`
   font-size: 25px;
   position: absolute;
-  right: 4vw;
+  right: 3vw;
   margin-right: 8px;
   @media screen and (min-width: 575px) {
     display: none;
@@ -95,6 +103,7 @@ export const NavItem = styled.div`
   @media screen and (max-width: 960px) {
     visibility: hidden;
   }
+  
 `;
 
 export const NavLinks = styled.a`

@@ -10,6 +10,9 @@ export const HeroContainer = styled.div`
   @media screen and (max-width: 960px) {
     grid-template-columns: 100%;
   }
+  @media screen and (max-width: 575px) {
+    margin-top: 5px;
+  }
 `;
 
 export const HeroBlank = styled.div`

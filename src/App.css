@@ -1,19 +1,4 @@
 @font-face {
-  font-family: "Aktiv Grotesk";
-  src: url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.eot");
-  src: url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.svg#Aktiv Grotesk")
-      format("svg");
-}
-
-@font-face {
   font-family: 'Neue Haas Grotesk Text Pro';
   font-style: normal;
   font-weight: 400;
@@ -37,7 +22,7 @@
   font-weight: 700;
   src: local('Neue Haas Grotesk Text Pro'), url('https://fonts.cdnfonts.com/s/14415/NHaasGroteskTXPro-76BdIt.woff') format('woff');
 }
-/* @import url("http://fonts.cdnfonts.com/css/neue-haas-grotesk-text-pro"); */
+
 
 body {
   background: #000;
@@ -94,4 +79,10 @@ a:hover {
 
 #button-about:hover {
   color: rgb(120, 120, 120);
+}
+
+@media only screen and (max-width: 575px) {
+  body {
+    font-size: 16px;
+  }
 }
