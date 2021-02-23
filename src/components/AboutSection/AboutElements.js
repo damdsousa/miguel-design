@@ -28,7 +28,7 @@ export const AboutContainer = styled.div`
 
 export const Description = styled.p`
   margin: 0;
-  
+  word-spacing: 2px;
 `;
 
 export const AboutLink = styled.a`
