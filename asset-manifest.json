@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/miguel-design/static/css/main.07ff35c9.chunk.css",
-    "main.js": "/miguel-design/static/js/main.5bb58879.chunk.js",
-    "main.js.map": "/miguel-design/static/js/main.5bb58879.chunk.js.map",
+    "main.css": "/miguel-design/static/css/main.de85e3cf.chunk.css",
+    "main.js": "/miguel-design/static/js/main.4195f0a0.chunk.js",
+    "main.js.map": "/miguel-design/static/js/main.4195f0a0.chunk.js.map",
     "runtime-main.js": "/miguel-design/static/js/runtime-main.68e4593c.js",
     "runtime-main.js.map": "/miguel-design/static/js/runtime-main.68e4593c.js.map",
     "static/css/2.f30d56ef.chunk.css": "/miguel-design/static/css/2.f30d56ef.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.6da24819.chunk.js.map": "/miguel-design/static/js/2.6da24819.chunk.js.map",
     "index.html": "/miguel-design/index.html",
     "static/css/2.f30d56ef.chunk.css.map": "/miguel-design/static/css/2.f30d56ef.chunk.css.map",
-    "static/css/main.07ff35c9.chunk.css.map": "/miguel-design/static/css/main.07ff35c9.chunk.css.map",
+    "static/css/main.de85e3cf.chunk.css.map": "/miguel-design/static/css/main.de85e3cf.chunk.css.map",
     "static/js/2.6da24819.chunk.js.LICENSE.txt": "/miguel-design/static/js/2.6da24819.chunk.js.LICENSE.txt",
     "static/media/miguel-lopes-1.png": "/miguel-design/static/media/miguel-lopes-1.e3b92c12.png",
     "static/media/miguel-lopes-10.png": "/miguel-design/static/media/miguel-lopes-10.365e98c4.png",
@@ -49,7 +49,7 @@
     "static/js/runtime-main.68e4593c.js",
     "static/css/2.f30d56ef.chunk.css",
     "static/js/2.6da24819.chunk.js",
-    "static/css/main.07ff35c9.chunk.css",
-    "static/js/main.5bb58879.chunk.js"
+    "static/css/main.de85e3cf.chunk.css",
+    "static/js/main.4195f0a0.chunk.js"
   ]
 }
