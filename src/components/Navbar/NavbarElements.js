@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { isMobile } from "react-device-detect";
+
 
 export const Nav = styled.nav`
   height: 80px;
@@ -6,16 +8,23 @@ export const Nav = styled.nav`
   top: 0;
   margin-right: 3vw;
   margin-left: 3vw;
+  height: ${() =>
+    isMobile
+      ? "70px": "80px"}
+${'' /* 
   @media screen and (max-width: 575px) {
-    height: 50px;
-  }
+    height: 70px;
+  } */}
 `;
 
 export const NavbarContainer = styled.div`
   display: inline-grid;
   grid-template-columns: 27vw 65.9vw;
   align-items: center;
-  height: 80px;
+  height: ${() =>
+    isMobile
+      ? "45px": "80px"};
+
   @media screen and (max-width: 960px) {
     grid-template-columns: 32vw 59.9vw;
   }
@@ -28,7 +37,7 @@ export const NavbarContainer = styled.div`
   }
   @media screen and (max-width: 575px) {
     grid-template-columns: 94vw;
-    height: 30px;
+    ${'' /* height: 45px; */}
   }
 `;
 

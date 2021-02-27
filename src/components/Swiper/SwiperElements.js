@@ -19,11 +19,6 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  ${'' /* @media screen and (max-width: 575px) {
-    height:60vw;
-  } */}
- 
-
 `;
 
 export const ImgSubtitle = styled.div`
@@ -33,6 +28,6 @@ export const ImgSubtitle = styled.div`
   bottom: 5%;
   white-space: nowrap;
   @media screen and (max-width: 575px) {
-    font-size: 11px;
+    font-size: 12px;
   }
 `;

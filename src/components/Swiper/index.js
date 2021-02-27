@@ -1,15 +1,21 @@
 import React, { useEffect, useState, useRef } from "react";
-import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Autoplay,
+  Parallax,
+  EffectFade,
+} from "swiper";
 import { SwiperContainer } from "./SwiperElements";
 import { Swiper } from "swiper/react";
 import { createSlides } from "./actions";
 import { isMobile } from "react-device-detect";
 
+
 // Import Swiper styles
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/effect-fade/effect-fade.scss";
-
+// import "swiper/components/lazy/lazy.scss";
 
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, Parallax, EffectFade]);
@@ -68,29 +74,33 @@ const SwiperSection = ({ elements, swiper, setSwiper, slideIndex }) => {
       ref={inputRef}
       onClick={() => {
         if (hidden === 2) {
-          swiper.slideNext(800);
+          swiper.slideNext(400);
         } else if (hidden === 1) {
-          swiper.slidePrev(800);
+          swiper.slidePrev(400);
         }
       }}
     >
+      
       <Swiper
         slidesPerView={1}
+        autoHeight={true}
         loop={true}
         parallax={true}
-        autoHeight={true} 
-        onSlideChange={() => {
-          console.log(slideIndex);
-          console.log(swiper);
-        }}
+        // lazy= {{loadOnTransitionStart: false}}
+        // preloadImages={false}
+        // onSlideChange={() => {
+        //   console.log(slideIndex);
+        //   console.log(swiper);
+        // }}
         initialSlide={slideIndex}
         onSwiper={(swiper) => {
-          console.log(swiper);
+          // console.log(swiper);
+
           slideIndex = swiper.activeIndex;
           setSwiper(swiper);
         }}
         effect="fade"
-        speed={800}
+        speed={400}
         autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
         {createSlides(0, 32, isMobile)}

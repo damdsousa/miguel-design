@@ -1,7 +1,7 @@
 import React from "react";
 import "swiper/components/navigation/navigation.scss";
 
-import { Description, AboutLink, AboutContainer, MailLink } from "./AboutElements";
+import { Description, AboutContainer, MailLink } from "./AboutElements";
 
 const AboutSection = ({ setElements, elements, setMobile }) => {
   return (
@@ -27,7 +27,9 @@ const AboutSection = ({ setElements, elements, setMobile }) => {
       >
         @miguellopes
       </a>
-      <MailLink id="mail" href="mailto:miguel@miguellopes.info">miguel@miguellopes.info</MailLink>
+      <MailLink id="mail" href="mailto:miguel@miguellopes.info">
+        miguel@miguellopes.info
+      </MailLink>
       {/* <AboutLink
         onClick={() => {
           setElements({ swiper: true, about: false });

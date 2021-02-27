@@ -1,14 +1,16 @@
 import styled from "styled-components";
+import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
-  margin-top: 50px;
+  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "50px")};
+  ${"" /* margin-top: 50px; */}
   width: 92%;
   max-width: 720px;
   display: grid;
   position: absolute;
   margin-left: 8px;
   left: 30vw;
-  top: 20%;
+  top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
   @media screen and (max-width: 1200px) {
     width: 90%;
   }
@@ -19,16 +21,17 @@ export const AboutContainer = styled.div`
     width: 90%;
   }
   @media screen and (max-width: 560px) {
-    top: 9%;
-    margin-top: 0px;
-    margin-left: 4vw;
+    ${"" /* top: 12.5%; */}
+    ${"" /* margin-top: 0px; */}
+    margin-left: 3vw;
     width: 87%;
   }
 `;
 
 export const Description = styled.p`
   margin: 0;
-  word-spacing: 2px;
+  line-height: 1.3;
+  ${"" /* word-spacing: 2px; */}
 `;
 
 export const AboutLink = styled.a`

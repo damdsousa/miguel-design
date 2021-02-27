@@ -4,6 +4,7 @@ import SwiperSection from "../Swiper";
 import { HeroContainer, HeroBlank, HeroActive } from "./HeroElements";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+
 const HeroSection = ({
   elements,
   setElements,
@@ -29,6 +30,7 @@ const HeroSection = ({
               timeout={{ enter: 1000, exit: 1000 }}
               classNames="aboutM"
             >
+              
               <SwiperSection
                 elements={elements}
                 slideIndex={slideIndex}
@@ -49,7 +51,12 @@ const HeroSection = ({
               timeout={{ enter: 1000, exit: 1000 }}
               classNames="aboutM"
             >
-              <AboutSection elements={elements} setElements={setElements} setMobile={setMobile} />
+              
+              <AboutSection
+                elements={elements}
+                setElements={setElements}
+                setMobile={setMobile}
+              />
             </CSSTransition>
           )}
         </TransitionGroup>
