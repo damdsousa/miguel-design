@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/miguel-design/static/css/main.164e5903.chunk.css",
-    "main.js": "/miguel-design/static/js/main.9d90f5b9.chunk.js",
-    "main.js.map": "/miguel-design/static/js/main.9d90f5b9.chunk.js.map",
+    "main.js": "/miguel-design/static/js/main.9955cfba.chunk.js",
+    "main.js.map": "/miguel-design/static/js/main.9955cfba.chunk.js.map",
     "runtime-main.js": "/miguel-design/static/js/runtime-main.68e4593c.js",
     "runtime-main.js.map": "/miguel-design/static/js/runtime-main.68e4593c.js.map",
     "static/css/2.f30d56ef.chunk.css": "/miguel-design/static/css/2.f30d56ef.chunk.css",
@@ -43,15 +43,13 @@
     "static/media/miguel-lopes-6.jpg": "/miguel-design/static/media/miguel-lopes-6.c1c8c857.jpg",
     "static/media/miguel-lopes-7.jpg": "/miguel-design/static/media/miguel-lopes-7.f7feb225.jpg",
     "static/media/miguel-lopes-8.jpg": "/miguel-design/static/media/miguel-lopes-8.e696fa9c.jpg",
-    "static/media/miguel-lopes-9.jpg": "/miguel-design/static/media/miguel-lopes-9.93fd059a.jpg",
-    "static/media/plus.0dea821f.svg": "/miguel-design/static/media/plus.0dea821f.svg",
-    "static/media/remove.3603e166.svg": "/miguel-design/static/media/remove.3603e166.svg"
+    "static/media/miguel-lopes-9.jpg": "/miguel-design/static/media/miguel-lopes-9.93fd059a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.68e4593c.js",
     "static/css/2.f30d56ef.chunk.css",
     "static/js/2.9046ad13.chunk.js",
     "static/css/main.164e5903.chunk.css",
-    "static/js/main.9d90f5b9.chunk.js"
+    "static/js/main.9955cfba.chunk.js"
   ]
 }
