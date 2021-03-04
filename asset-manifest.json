@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/miguel-design/static/css/main.009eb8cc.chunk.css",
-    "main.js": "/miguel-design/static/js/main.8fa12e37.chunk.js",
-    "main.js.map": "/miguel-design/static/js/main.8fa12e37.chunk.js.map",
+    "main.js": "/miguel-design/static/js/main.e45577b9.chunk.js",
+    "main.js.map": "/miguel-design/static/js/main.e45577b9.chunk.js.map",
     "runtime-main.js": "/miguel-design/static/js/runtime-main.68e4593c.js",
     "runtime-main.js.map": "/miguel-design/static/js/runtime-main.68e4593c.js.map",
     "static/css/2.bc33a7ec.chunk.css": "/miguel-design/static/css/2.bc33a7ec.chunk.css",
-    "static/js/2.618611f7.chunk.js": "/miguel-design/static/js/2.618611f7.chunk.js",
-    "static/js/2.618611f7.chunk.js.map": "/miguel-design/static/js/2.618611f7.chunk.js.map",
+    "static/js/2.bb0f27cc.chunk.js": "/miguel-design/static/js/2.bb0f27cc.chunk.js",
+    "static/js/2.bb0f27cc.chunk.js.map": "/miguel-design/static/js/2.bb0f27cc.chunk.js.map",
     "index.html": "/miguel-design/index.html",
     "static/css/2.bc33a7ec.chunk.css.map": "/miguel-design/static/css/2.bc33a7ec.chunk.css.map",
     "static/css/main.009eb8cc.chunk.css.map": "/miguel-design/static/css/main.009eb8cc.chunk.css.map",
-    "static/js/2.618611f7.chunk.js.LICENSE.txt": "/miguel-design/static/js/2.618611f7.chunk.js.LICENSE.txt",
+    "static/js/2.bb0f27cc.chunk.js.LICENSE.txt": "/miguel-design/static/js/2.bb0f27cc.chunk.js.LICENSE.txt",
     "static/media/miguel-lopes-1-blur.jpg": "/miguel-design/static/media/miguel-lopes-1-blur.ad9196a2.jpg",
     "static/media/miguel-lopes-1.jpg": "/miguel-design/static/media/miguel-lopes-1.66a6110d.jpg",
     "static/media/miguel-lopes-10.jpg": "/miguel-design/static/media/miguel-lopes-10.e422265b.jpg",
@@ -49,8 +49,8 @@
   "entrypoints": [
     "static/js/runtime-main.68e4593c.js",
     "static/css/2.bc33a7ec.chunk.css",
-    "static/js/2.618611f7.chunk.js",
+    "static/js/2.bb0f27cc.chunk.js",
     "static/css/main.009eb8cc.chunk.css",
-    "static/js/main.8fa12e37.chunk.js"
+    "static/js/main.e45577b9.chunk.js"
   ]
 }
