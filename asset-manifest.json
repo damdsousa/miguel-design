@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/miguel-design/static/css/main.aa012e09.chunk.css",
-    "main.js": "/miguel-design/static/js/main.a03638ca.chunk.js",
-    "main.js.map": "/miguel-design/static/js/main.a03638ca.chunk.js.map",
+    "main.js": "/miguel-design/static/js/main.0296da65.chunk.js",
+    "main.js.map": "/miguel-design/static/js/main.0296da65.chunk.js.map",
     "runtime-main.js": "/miguel-design/static/js/runtime-main.68e4593c.js",
     "runtime-main.js.map": "/miguel-design/static/js/runtime-main.68e4593c.js.map",
     "static/css/2.bc33a7ec.chunk.css": "/miguel-design/static/css/2.bc33a7ec.chunk.css",
@@ -50,6 +50,6 @@
     "static/css/2.bc33a7ec.chunk.css",
     "static/js/2.61545edc.chunk.js",
     "static/css/main.aa012e09.chunk.css",
-    "static/js/main.a03638ca.chunk.js"
+    "static/js/main.0296da65.chunk.js"
   ]
 }
