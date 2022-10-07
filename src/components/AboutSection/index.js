@@ -1,33 +1,55 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
+import "swiper/components/navigation/navigation.scss";
 
+import { Description, AboutContainer, Mail } from "./AboutElements";
 
-import { Description, AboutLink, AboutContainer } from "./AboutElements";
-const AboutSection = ({setPage, page}) => {
+const AboutSection = ({
+  setElements,
+  elements,
+  setMobile,
+  mobile,
+  signal,
+  setSignal,
+  swiper,
+  setSlideIndex,
+}) => {
+  const handleClick = event => {
+    // event.preventDefault();
+    event.stopPropagation();
+        event.nativeEvent.stopImmediatePropagation();
+  }
   return (
-    <AboutContainer page={page}>
+    <AboutContainer
+      elements={elements}
+      
+    >
       <Description>
-        Graduated in ESAD.cr currently living in Lisbon, Portugal
+        I'm a Designer specialized in Branding, Visual Identity and Product Design.
       </Description>
       <Description>
-        His work ranges from installation/urban requalification to
-        graescriptionhic and product design. Miguel also participated in several
-        exhibitions including experimentadesign 2013, ParisDesignWeek with
-        MeetMyProject, he collaborated with architecture studio Paratelier with
-        projects connected between spatial and product design. His work appeared
-        on reputable on and offline magazines like ICON, Domus, Minimalissimo,
-        Defringe, Gessato, Thisispaper, Opumo, Gooood, Leibal and Lovark.
+        After several years working with product development, I start to work with graphic design,
+        most international companies, creating strategies to build timeless brands.
+
       </Description>
       <p></p>
+      <a onClick={ handleClick } className="link-about" href="tel:351-913-700-157">
+        T:+351 913 700 157
+      </a>
       <a
+      onClick={ handleClick }
+        className="link-about"
         href="https://www.instagram.com/miguelmlopes/"
         target="_blank"
         rel="noreferrer"
       >
         @miguellopes
       </a>
-      <a href="tel:351-913-700-157">T:+351 913 700 157</a>
-      <a href="mailto:miguel@miguellopes.info">miguel@miguellopes.info</a>
-      <AboutLink  onClick={() => {setPage(false)}}>&lt;</AboutLink>
+      <Mail onClick={ handleClick }
+        className="link-about" 
+        href="mailto:miguel@miguellopes.info">
+          miguel@miguellopes.info
+        </Mail>
     </AboutContainer>
   );
 };

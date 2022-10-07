@@ -1,122 +1,116 @@
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 export const Nav = styled.nav`
   height: 80px;
-  /*margin-top: -80px;*/
   display: flex;
-
-  position: sticky;
   top: 0;
-  z-index: 10;
-
-  @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
-  }
+  margin-right: 3vw;
+  margin-left: 3vw;
+  height: ${() => (isMobile ? "60px" : "70px")};
 `;
 
 export const NavbarContainer = styled.div`
-  display: grid;
-  grid-template-columns: 27vw 65vw;
+  display: inline-grid;
+  grid-template-columns: 27vw 65.9vw;
   align-items: center;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
+  margin-bottom:0px;
+  height: ${() => (isMobile ? "45px" : "80px")};
+
   @media screen and (max-width: 960px) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 32vw 59.9vw;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 36vw 55.9vw;
+  }
+  @media screen and (max-width: 670px) {
+    grid-template-columns: 40vw 51.7vw;
+  }
+  }
+  @media screen and (max-width: 575px) {
+    grid-template-columns: 94vw;
   }
 `;
+
 export const NavLogoContainer = styled.div`
+  justify-self: start;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 `;
 
-export const NavLogoItem = styled(LinkR)`
-  & #aboutLink {
-    color: ${({ page }) => (page ? "#fff" : "#707070")};
+export const NavSlide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  @media screen and (max-width: 575px) {
+    display: none;
+  } 
   }
+`;
 
+export const NavLogoItem = styled.a`
+  white-space: nowrap;
   cursor: pointer;
-  margin-left: 25px;
   margin-right: 25px;
   text-decoration: none;
-  white-space: nowrap;
-  .disable-link {
-    pointer-events: none;
-    color: #707070;
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-left: 20px;
-  }
-
-  @media screen and (max-width: 520px) {
-    display: ${({ mobile }) => (mobile ? "" : "none")};
-   
-  }
-`;
-
-export const NavMobilePlus = styled(LinkR)`
-  display: ${({ mobile }) => (mobile ? "" : "none")};
-  position: absolute;
-  right: 0;
-  margin-right: 30px;
-  @media screen and (max-width: 521px) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @media screen and (max-width: 575px) {
     margin-right: 20px;
   }
-  @media screen and (min-width: 521px) {
+`;
+
+export const LogoItem = styled.div`
+  margin-left: 25px;
+  margin-right: 25px;
+  white-space: nowrap;
+  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
+  @media screen and (max-width: 575px) {
+    margin-left: 0px;
+    color: #fff;
+  }
+`;
+
+export const MobileItem = styled.div`
+  position: absolute;
+  right: 3vw;
+  margin-right: 8px;
+  @media screen and (min-width: 575px) {
     display: none;
   }
 `;
-export const NavMobileMinus = styled(LinkR)`
-  display: ${({ mobile }) => (mobile ? "none" : "grid")};
-  margin-left: 20px;
-  @media screen and (min-width: 521px) {
-    display: none;
-  }
+
+export const NavMobilePlus = styled.img`
+  cursor: pointer;
+  width: 13.5px;
+  padding: 8px;
+  margin: -8px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
-export const NavSlide = styled.div`
-  display: grid;
-  grid-template-columns: 65px 65px auto;
-  text-align: center;
 
-  @media screen and (max-width: 1024px) {
-    justify-content: end;
-    grid-template-columns: 65px 65px;
-    margin-right: 30px;
-  }
-
-  @media screen and (max-width: 768px) {
-    ${"" /* margin-right:20px; */}
-  }
-  @media screen and (max-width: 520px) {
-    display: ${({ mobile }) => (mobile ? "none" : "")};
-  }
+export const NavMobileMinus = styled.img`
+  cursor: pointer;
+  width: 13.5px;
+  display: ${({ mobile }) => (mobile ? "none" : "")};
 `;
 
 export const NavItem = styled.div`
+  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   list-style-type: none;
   height: 80px;
-  
+  text-decoration: none;
+  height: 100%;
+  @media screen and (max-width: 1200px) {
+    visibility: hidden;
+  }
 `;
 
-export const NavLinks = styled(LinkR)`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
+export const NavLinks = styled.a`
+  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   cursor: pointer;
-
-  &.active {
-    text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   }
-
-  .disable-link {
-    pointer-events: none;
-    color: #707070;
-  }
-
-  
+ }
 `;

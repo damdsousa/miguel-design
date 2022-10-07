@@ -1,20 +1,28 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans");
 @font-face {
-  font-family: "Aktiv Grotesk";
-  src: url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.eot");
-  src: url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/a59a10fc173a405262ecba082980066e.svg#Aktiv Grotesk")
-      format("svg");
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Neue Haas Grotesk Text Pro'), url('https://fonts.cdnfonts.com/s/14415/NHaasGroteskTXPro-55Rg.woff') format('woff');
 }
-@import url("http://fonts.cdnfonts.com/css/neue-haas-grotesk-text-pro");
+@font-face {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Neue Haas Grotesk Text Pro'), url('https://fonts.cdnfonts.com/s/14415/NHaasGroteskTXPro-56It.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Neue Haas Grotesk Text Pro'), url('https://fonts.cdnfonts.com/s/14415/NHaasGroteskTXPro-75Bd.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Neue Haas Grotesk Text Pro'), url('https://fonts.cdnfonts.com/s/14415/NHaasGroteskTXPro-76BdIt.woff') format('woff');
+}
+
 
 body {
   background: #000;
@@ -27,37 +35,105 @@ a {
   outline: none;
   text-decoration: none;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+ 
+}
+
+.link-about{
+  width: 200px;
+}
+
+.spinEffect{
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+.spinEffectOut{
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+}
+
+.rotateIn {
+  animation: rotate-in-keyframes 300ms;
+ }
+ 
+ @keyframes rotate-in-keyframes {
+  from {
+   transform: rotate(0deg);
+  }
+ 
+  to {
+   transform: rotate(45deg);
+  }
+ }
+
+ .rotateOut {
+  animation: rotate-out-keyframes 300ms;
+ }
+ 
+ @keyframes rotate-out-keyframes {
+  from {
+   transform: rotate(45deg);
+  }
+ 
+  to {
+   transform: rotate(0deg);
+  }
+ }
+
+
+.aboutM-enter {
+  opacity: 0.01;
+}
+.aboutM-enter-active {
+  opacity: 1;
+  -webkit-timing-function: ease-in;
+  -webkit-transition-duration: 400ms;
+  transition: ease-in 400ms;
+}
+.aboutM-exit {
+  opacity: 1;
+}
+.aboutM-exit-active {
+  opacity: 0.01;
+  -webkit-timing-function: ease-out;
+  -webkit-transition-duration: 400ms;
+  transition: ease-out 400ms;
 }
 
 a:visited {
   color: #fff;
 }
 a:hover {
-  color: #a6a6a6;
+  color: #fff;
 }
 
 #button-prev {
-  color: #6a747c;
-  position: absolute;
-  height: 85%;
-  left: 4%;
-  --swiper-navigation-size: 15px;
+  color: rgb(120, 120, 120);
+  text-decoration: none;
+}
+
+#button-prev:hover {
+  color: rgb(120, 120, 120);
+  visibility: visible;
 }
 
 #button-next {
-  color: #6a747c;
-  position: absolute;
-  left: 6%;
-  height: 85%;
-  --swiper-navigation-size: 15px;
+  color: rgb(120, 120, 120);
+}
+#button-next:hover {
+  color: rgb(120, 120, 120);
+  visibility: visible;
 }
 
 #button-about:hover {
-  color: #6a747c;
+  color: rgb(120, 120, 120);
 }
 
-@media only screen and (max-width: 600px) {
-  #button-next {
-    left: 8%;
+@media only screen and (max-width: 575px) {
+  body {
+    font-size: 16px;
   }
 }

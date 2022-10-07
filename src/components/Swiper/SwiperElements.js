@@ -1,33 +1,44 @@
 import styled from "styled-components";
+import { isMobile } from "react-device-detect";
 
 export const SwiperContainer = styled.div`
-  opacity: ${({ page }) => (page ? "0" : "1")};
-  ${'' /* display: ${({ page }) => (page ? "none" : "")}; */}
-  position: ${({ page }) => (page ? "absolute" : "")};
-  top: ${({ page }) => (page ? "-1000px" : "")};
-  left: ${({ page }) => (page ? "-100px" : "")};
-  width:  ${({ page }) => (page ? "0px" : "")};
-  overflow:hidden;
+  overflow: hidden;
+  margin-top: 90px;
+  cursor: ${({ cursor }) =>
+    isMobile
+      ? "initial"
+      : cursor === 1
+      ? "url(left-arrow.png), auto"
+      : cursor === 2
+      ? "url(right-arrow.png), auto"
+      : "none"};
+    @media screen and (max-width: 1080px) {
+    margin-top: 10px;
+  }
 `;
 
+// export const SubContainer = styled.div`
+//  overflow: hidden;
+//   margin-top: 75px;
+  // @media screen and (max-width: 1080px) {
+  //   margin-top: 30px;
+  // }
+// `;
 export const ImgWrap = styled.div`
-  margin: 0px auto;
+  ${'' /* margin-top: 0px; */}
 `;
 
 export const Img = styled.img`
-  width: 90%;
-  @media screen and (max-width: 1024px) {
-    width: 100%;
-  }
-  
+  width: 100%;
 `;
 
 export const ImgSubtitle = styled.div`
-  color: #6a747c;
+  color: rgb(120, 120, 120);
   position: absolute;
-  left: 80%;
-  bottom: 7.5%;
-  @media screen and (max-width: 520px) {
-    left: 70%;
+  right: 3%;
+  bottom: 5%;
+  white-space: nowrap;
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
   }
 `;

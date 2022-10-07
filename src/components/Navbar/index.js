@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Plus from "../../assets/icons/plus.png";
+
 import {
   Nav,
   NavbarContainer,
@@ -8,10 +10,21 @@ import {
   NavItem,
   NavLinks,
   NavMobilePlus,
-  NavMobileMinus,
+  LogoItem,
+  MobileItem,
 } from "./NavbarElements";
 
-const Navbar = ({ mobile, setMobile, page, setPage, setSwiper }) => {
+const Navbar = ({
+  mobile,
+  setMobile,
+  elements,
+  setElements,
+  setSlideIndex,
+  swiper,
+  signal,
+  setSignal
+}) => {
+  
   return (
     <>
       <Nav>
@@ -20,34 +33,71 @@ const Navbar = ({ mobile, setMobile, page, setPage, setSwiper }) => {
             <NavLogoItem
               id="aboutLink"
               mobile={mobile}
-              page={page}
-              onClick={() => setPage(true)}
+              page={elements.about}
+              onClick={() => {
+                let index = 0;
+                if (index === elements.index) {
+                  index = 1;
+                }
+                setElements({
+                  swiper: !elements.swiper,
+                  about: !elements.about,
+                  index: index,
+                });
+                setMobile(!mobile);
+                mobile ? setSignal(1) : setSignal(2);
+                if (elements.swiper) {
+                  setSlideIndex(swiper.activeIndex);
+                }
+              }}
             >
               Miguel Lopes
             </NavLogoItem>
-            <NavLogoItem mobile={mobile} id="portfolioLink">
+            <LogoItem mobile={mobile} page={elements.about}>
               Designer
-            </NavLogoItem>
+            </LogoItem>
 
-            <NavMobileMinus mobile={mobile} onClick={() => setMobile(true)}>
-              -
-            </NavMobileMinus>
-            <NavMobilePlus mobile={mobile} onClick={() => setMobile(false)}>
-              +
-            </NavMobilePlus>
+            <MobileItem page={elements.about}>
+              <NavMobilePlus
+                className={
+                  signal === 1
+                    ? "rotateIn spinEffect"
+                    : signal === 2
+                    ? "rotateOut spinEffectOut"
+                    : ""
+                }
+                src={Plus}
+                alt="Plus"
+                mobile={mobile}
+                onClick={() => {
+                  mobile ? setSignal(1) : setSignal(2);
+                  setMobile(!mobile);
+                  let index = 0;
+                  if (index === elements.index) {
+                    index = 1;
+                  }
+                  setElements({
+                    swiper: !elements.swiper,
+                    about: !elements.about,
+                    index: index,
+                  });
+
+                  if (mobile) {
+                    setSlideIndex(swiper.activeIndex);
+                  }
+                }}
+              />
+            </MobileItem>
           </NavLogoContainer>
 
           <NavSlide mobile={mobile}>
-            <NavItem>
-              <NavLinks id="productsLink" onClick={() => setSwiper("product")}>
-                Product/
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks id="graphicsLink" onClick={() => setSwiper("graphic")}>
-                Graphic
-              </NavLinks>
-            </NavItem>
+            <NavItem page={elements.about}>Product/Graphic</NavItem>
+            <NavLinks
+              page={elements.about}
+              href="mailto:miguel@miguellopes.info"
+            >
+              miguel@miguellopes.info
+            </NavLinks>
           </NavSlide>
         </NavbarContainer>
       </Nav>

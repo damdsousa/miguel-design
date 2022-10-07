@@ -1,17 +1,115 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
-import { FullSwiper, ProductSwiper, GraphicSwiper } from "./Swipers";
 import { SwiperContainer } from "./SwiperElements";
+import { Swiper } from "swiper/react";
+import { CreateSlides } from "./actions";
+import { isMobile } from "react-device-detect";
+
+// Import Swiper styles
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/effect-fade/effect-fade.scss";
 
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, Parallax, EffectFade]);
 
-const SwiperSection = ({ page, swiper, setMySwiper }) => {
+const SwiperSection = ({
+  elements,
+  swiper,
+  setSwiper,
+  slideIndex,
+  isLoading,
+  setLoading,
+}) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [hidden, setHidden] = useState(0);
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    addEventListeners();
+    return () => removeEventListeners();
+  });
+
+  const addEventListeners = () => {
+    document.addEventListener("mousemove", onMouseMove);
+  };
+
+  const removeEventListeners = () => {
+    document.removeEventListener("mousemove", onMouseMove);
+  };
+
+  const onMouseMove = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+    if (inputRef.current) {
+      let referencePosition = inputRef.current.getBoundingClientRect();
+      let middle =
+        referencePosition.left +
+        (referencePosition.right - referencePosition.left) / 2;
+
+      if (
+        e.clientY > referencePosition.top &&
+        e.clientY < referencePosition.bottom
+      ) {
+        if (e.clientX > referencePosition.left && e.clientX < middle) {
+          setHidden(1);
+        } else if (e.clientX > middle && e.clientX < referencePosition.right) {
+          setHidden(2);
+        } else {
+          setHidden(0);
+        }
+      } else {
+        setHidden(0);
+      }
+    }
+  };
+
   return (
-    <SwiperContainer page={page}>
-      {swiper === "full" && <FullSwiper setMySwiper={setMySwiper}/>}
-      {swiper === "product" && <ProductSwiper setMySwiper={setMySwiper}/>}
-      {swiper === "graphic" && <GraphicSwiper setMySwiper={setMySwiper}/>}
+    <SwiperContainer
+      cursor={hidden}
+      page={elements.swiper}
+      load={isLoading}
+      ref={inputRef}
+      onClick={() => {
+        if (hidden === 2) {
+          swiper.slideNext(400);
+          swiper.autoplay.start();
+        } else if (hidden === 1) {
+          swiper.slidePrev(400);
+          swiper.autoplay.start();
+        }
+        
+      }}
+    >
+    
+      <Swiper
+        // ref={loadRef}
+        slidesPerView={1}
+        autoHeight={true}
+        loop={true}
+        parallax={true}
+        updateOnImagesReady={true}
+        initialSlide={slideIndex}
+        onSwiper={(swiper) => {
+          slideIndex = swiper.activeIndex;
+          setSwiper(swiper);
+        }}
+        onImagesReady={(s) => {
+          console.log(isLoading);
+
+          s.autoplay.start();
+          s.delay = 2500;
+          s.disableOnInteraction = false;
+          setLoading(false);
+        }}
+        effect="fade"
+        speed={400}
+        autoplay={true}
+
+        // autoplay={{ delay: "2500", disableOnInteraction: false }}
+      >
+        {CreateSlides(0, 52, isMobile)}
+      </Swiper>
     </SwiperContainer>
   );
 };

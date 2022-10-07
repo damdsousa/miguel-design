@@ -1,28 +1,51 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import {Section} from "./PageElement";
 const Home = () => {
-  const [page, setPage] = useState(false);
-  const [swiper, setSwiper] = useState("full");
-  const [mobile, setMobile] = useState("none");
+  const [elements, setElements] = useState({
+    swiper: true,
+    about: false,
+    id: 0,
+  });
+  const [swiper, setSwiper] = useState(null);
+  const [mobile, setMobile] = useState(true);
+  const [signal, setSignal] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [leftHover, setLeftHover] = useState(false);
+  const [rightHover, setRightHover] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   return (
-    <>
+    <Section load={isLoading}>
       <Navbar
         mobile={mobile}
         setMobile={setMobile}
-        page={page}
-        setPage={setPage}
+        elements={elements}
+        setElements={setElements}
         swiper={swiper}
-        setSwiper={setSwiper}
+        setSlideIndex={setSlideIndex}
+        signal={signal}
+        setSignal={setSignal}
       />
       <HeroSection
-        page={page}
-        setPage={setPage}
+        setLoading={setLoading}
+        isLoading={isLoading}
+        elements={elements}
+        setElements={setElements}
+        setMobile={setMobile}
         swiper={swiper}
         setSwiper={setSwiper}
+        slideIndex={slideIndex}
+        setSlideIndex={setSlideIndex}
+        leftHover={leftHover}
+        setLeftHover={setLeftHover}
+        rightHover={rightHover}
+        setRightHover={setRightHover}
+        signal={signal}
+        setSignal={setSignal}
       />
-    </>
+    </Section>
   );
 };
 

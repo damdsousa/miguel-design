@@ -1,58 +1,63 @@
-import styled, { css, keyframes } from "styled-components";
-import { Link as LinkR } from "react-router-dom";
-
-const slideIn = keyframes`
-  from{
-    left: -90%;
-  }
-  to {
-    left: 0%
-  }
-`;
-const slideOut = keyframes`
-  from{
-    left: 0%;
-  }
-  to {
-    left: -90%
-  }
-`;
+import styled from "styled-components";
+import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
-  position: relative;
-  ${'' /* margin-top: 50px; */}
-  width: 100%;
-  max-width: 720px;
-  display: ${({ page }) => (page ? "grid" : "none")};
-  animation: ${({ page }) =>
-    page
-      ? css`
-          ${slideIn} 0.5s linear
-        `
-      : css`
-          ${slideOut} 0.5s linear
-        `};
+  ${'' /* cursor : url(left-arrow.png), auto; */}
+  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "50px")};
+  ${'' /* padding-bottom: 25%; */}
+  ${'' /* padding-right: 10vw; */}
+  ${"" /* margin-top: 50px; */}
+  width: 92%;
+  max-width: 600px;
+  display: grid;
+  position: absolute;
+  margin-left: 8px;
+  left: 30vw;
+  top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
+  @media screen and (max-width: 1200px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 1080px) {
+    left: 8px;
+    margin-left: 3vw;
+    margin-right: 4vw;
+    width: 90%;
 
-    @media screen and (max-width: 960px) {
-   
-    
- 
+  }
+
+  
+
+  @media screen and (max-width: 560px) {
+    margin-left: 3vw;
+    width: 87%;
   }
 `;
+
 export const Description = styled.p`
   margin: 0;
+  line-height: 1.3;
 `;
 
-export const AboutLink = styled(LinkR)`
+export const AboutLink = styled.div`
   margin-top: 25px;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-
-  &.visited {
-    color: #fff;
+  position: relative;
+  height: 105%;
+  left: 0;
+  --swiper-navigation-size: 15px;
+  &:hover {
+    text-decoration: none;
+    color: rgb(120, 120, 120);
   }
-  &.hover {
-    color: #a6a6a6;
+  @media screen and (max-width: 520px) {
+    display: none;
+  }
+`;
+
+export const Mail = styled.a`
+   @media screen and (min-width: 575px) {
+    display: none;
   }
 `;
