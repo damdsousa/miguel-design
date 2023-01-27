@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TT Hoves';
+    src: local('TT Hoves Hairline'), local('TT-Hoves-Hairline'),
+        url('TTHoves-Hairline.woff2') format('woff2'),
+        url('TTHoves-Hairline.woff') format('woff'),
+        url('TTHoves-Hairline.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }

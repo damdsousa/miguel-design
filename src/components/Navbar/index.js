@@ -110,6 +110,7 @@ const Navbar = ({
                 }
                 // toggled={setSignal(1)} toggle={setSignal(2)}
                 direction = "right"
+                size={25}
                 
                 />
             </MobileItem>
