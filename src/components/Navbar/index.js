@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Plus from "../../assets/icons/plus.png";
+import { Slant as Hamburger } from 'hamburger-react'
+
 
 import {
   Nav,
@@ -53,11 +55,9 @@ const Navbar = ({
             >
               Miguel Lopes
             </NavLogoItem>
-            <LogoItem mobile={mobile} page={elements.about}>
-              Designer
-            </LogoItem>
+            
 
-            <MobileItem page={elements.about}>
+            {/* <MobileItem page={elements.about}>
               <NavMobilePlus
                 className={
                   signal === 1
@@ -87,6 +87,31 @@ const Navbar = ({
                   }
                 }}
               />
+            </MobileItem> */}
+            <MobileItem page={elements.about}>
+              <Hamburger
+                onToggle={toggled => {
+                  mobile ? setSignal(1) : setSignal(2);
+                  setMobile(!mobile);
+                  let index = 0;
+                  if (index === elements.index) {
+                    index = 1;
+                  }
+                  setElements({
+                    swiper: !elements.swiper,
+                    about: !elements.about,
+                    index: index,
+                  });
+
+                  if (mobile) {
+                    setSlideIndex(swiper.activeIndex);
+                  }
+                }
+                }
+                // toggled={setSignal(1)} toggle={setSignal(2)}
+                direction = "right"
+                
+                />
             </MobileItem>
           </NavLogoContainer>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { isMobile } from "react-device-detect";
 import "swiper/components/navigation/navigation.scss";
 
-import { Description, AboutContainer, Mail } from "./AboutElements";
+import { Description, AboutContainer, Mail, Phone, IG } from "./AboutElements";
 
 const AboutSection = ({
   setElements,
@@ -33,10 +33,10 @@ const AboutSection = ({
 
       </Description>
       <p></p>
-      <a onClick={ handleClick } className="link-about" href="tel:351-913-700-157">
+      <Phone onClick={ handleClick } className="link-about" href="tel:351-913-700-157">
         T:+351 913 700 157
-      </a>
-      <a
+      </Phone>
+      <IG
       onClick={ handleClick }
         className="link-about"
         href="https://www.instagram.com/miguelmlopes/"
@@ -44,7 +44,7 @@ const AboutSection = ({
         rel="noreferrer"
       >
         @miguellopes
-      </a>
+      </IG>
       <Mail onClick={ handleClick }
         className="link-about" 
         href="mailto:miguel@miguellopes.info">

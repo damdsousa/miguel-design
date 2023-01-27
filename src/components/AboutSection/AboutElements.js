@@ -61,3 +61,19 @@ export const Mail = styled.a`
     display: none;
   }
 `;
+
+export const IG = styled.a`
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+`;
+
+export const Phone = styled.a`
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+`;
