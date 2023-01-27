@@ -7,12 +7,12 @@ export const AboutContainer = styled.div`
   ${'' /* padding-bottom: 25%; */}
   ${'' /* padding-right: 10vw; */}
   ${"" /* margin-top: 50px; */}
-  width: 92%;
-  max-width: 600px;
+
+
   display: grid;
   position: absolute;
-  margin-left: 8px;
-  left: 30vw;
+  margin-left: 3vw;
+
   top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
   @media screen and (max-width: 1200px) {
     width: 90%;

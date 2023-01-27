@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 
 export const SwiperContainer = styled.div`
   overflow: hidden;
-  margin-top: 90px;
+
   cursor: ${({ cursor }) =>
     isMobile
       ? "initial"
@@ -17,19 +17,12 @@ export const SwiperContainer = styled.div`
   }
 `;
 
-// export const SubContainer = styled.div`
-//  overflow: hidden;
-//   margin-top: 75px;
-  // @media screen and (max-width: 1080px) {
-  //   margin-top: 30px;
-  // }
-// `;
 export const ImgWrap = styled.div`
-  ${'' /* margin-top: 0px; */}
+
 `;
 
 export const Img = styled.img`
-  width: 100%;
+width: 100%;
 `;
 
 export const ImgSubtitle = styled.div`

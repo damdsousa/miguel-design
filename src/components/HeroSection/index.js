@@ -48,23 +48,8 @@ const HeroSection = ({
         }
       }}
     >
-      <HeroBlank></HeroBlank>
+      
       <HeroActive>
-        {/* {elements.swiper && isLoading && (
-          <LoadingSection
-            setLoading={setLoading}
-            isLoading={isLoading}
-            elements={elements}
-            slideIndex={slideIndex}
-            setSlideIndex={setSlideIndex}
-            setSwiper={setSwiper}
-            swiper={swiper}
-            leftHover={leftHover}
-            setLeftHover={setLeftHover}
-            rightHover={rightHover}
-            setRightHover={setRightHover}
-          />
-        )} */}
         <TransitionGroup component={null}>
           {elements.swiper && (
             <CSSTransition

@@ -11,7 +11,7 @@ export function CreateSlides(start, numberOfSlides, isMobile) {
     for (let i = start; i < numberOfSlides; i += 1) {
       slideImages[i] = {
         id: "slide" + (i + 1),
-        img: require(`../../assets/images/sizeB/miguel-lopes-${1 + i}.jpg`)
+        img: require(`../../assets/images/sizeB/miguel-lopes-m${1 + i}.jpg`)
           .default,
         alt: "slide" + (i + 1),
       };

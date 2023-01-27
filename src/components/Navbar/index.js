@@ -117,7 +117,7 @@ const Navbar = ({
           </NavLogoContainer>
 
           <NavSlide mobile={mobile}>
-            <NavItem page={elements.about}>Product/Graphic</NavItem>
+            <NavItem page={elements.about}></NavItem>
             <NavLinks
               page={elements.about}
               href="mailto:miguel@miguellopes.info"
