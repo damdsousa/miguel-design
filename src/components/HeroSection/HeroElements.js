@@ -4,7 +4,16 @@ import { isMobile } from "react-device-detect";
 export const HeroContainer = styled.div`
   cursor : ${({elements}) => elements.about ? "url(left-arrow.png), auto" : "initial"}; 
 
+  position: absolute;
+  z-index: -1;
+  left: ${() => (isMobile ? "50%" : "50%")};
+  margin-left: ${() => (isMobile ? "-50%" : "-50%")};
+  top: ${() => (isMobile ? "0%" : "50%")};
+  margin-top: ${() => (isMobile ? "0%" : "-30%")};
+  
  
+  width: 100vw;
+  height: 100vh;
   align-items: center;
 
   ${'' /* grid-template-rows: auto; */}

@@ -37,7 +37,7 @@ body {
   background: #000;
   font-family: "TT Hoves";
   color: #fff;
-  font-size: 20px;
+  font-size: 25px;
   overflow: hidden;
 }
 a {
@@ -50,9 +50,7 @@ a {
  
 }
 
-.link-about{
-  width: 200px;
-}
+
 
 .spinEffect{
   transform: rotate(45deg);

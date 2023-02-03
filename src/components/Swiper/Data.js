@@ -42,4 +42,7 @@ export const subtitles = [
   "Brand Identity, Raffaelle Sarubbo",
   "Social Media, Raffaelle Sarubbo",
   "Brand Identity, HO Wine House of Colares",
+  "Brand Identity, HO Wine House of Colares",
+  "Brand Identity, HO Wine House of Colares",
+  "Brand Identity, HO Wine House of Colares",
 ];

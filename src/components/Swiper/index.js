@@ -108,7 +108,7 @@ const SwiperSection = ({
 
         // autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
-        {CreateSlides(0, 43, isMobile)}
+        {CreateSlides(0, 46, isMobile)}
       </Swiper>
     </SwiperContainer>
   );

@@ -16,6 +16,7 @@ const Home = () => {
   const [rightHover, setRightHover] = useState(false);
   const [isLoading, setLoading] = useState(true);
 
+
   return (
     <Section load={isLoading}>
       <Navbar

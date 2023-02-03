@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { isMobile } from "react-device-detect";
+import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const Nav = styled.nav`
   height: 80px;
@@ -61,6 +62,7 @@ export const NavLogoItem = styled.a`
 `;
 
 export const LogoItem = styled.div`
+display: ${() => (isMobileOnly ? "none" : "")};
   margin-left: 25px;
   margin-right: 25px;
   white-space: nowrap;

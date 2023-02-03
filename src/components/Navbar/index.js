@@ -55,6 +55,9 @@ const Navbar = ({
             >
               Miguel Lopes
             </NavLogoItem>
+            <LogoItem mobile={mobile} page={elements.about}>
+              Designer
+            </LogoItem>
             
 
             {/* <MobileItem page={elements.about}>
@@ -122,7 +125,7 @@ const Navbar = ({
               page={elements.about}
               href="mailto:miguel@miguellopes.info"
             >
-              miguel@miguellopes.info
+              Email
             </NavLinks>
           </NavSlide>
         </NavbarContainer>

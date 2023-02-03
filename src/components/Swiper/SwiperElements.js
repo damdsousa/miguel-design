@@ -22,14 +22,14 @@ export const ImgWrap = styled.div`
 `;
 
 export const Img = styled.img`
-width: 100%;
+  width: 100%;
 `;
 
 export const ImgSubtitle = styled.div`
   color: rgb(120, 120, 120);
   position: absolute;
-  right: 3%;
-  bottom: 5%;
+  right: 4vw;
+  bottom: 15%;
   white-space: nowrap;
   @media screen and (max-width: 575px) {
     font-size: 12px;
