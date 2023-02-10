@@ -20,11 +20,17 @@ const SwiperSection = ({
   slideIndex,
   isLoading,
   setLoading,
+  fontColor,
+  setFontColor
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(0);
 
   const inputRef = useRef();
+  const redFontIndex = [43,44];
+  // const redFontIndex = [40,41];
+  const whiteFontIndex = [2,3,4,5,6,7,8,12,14,15,16,18];
+
 
   useEffect(() => {
     addEventListeners();
@@ -102,13 +108,27 @@ const SwiperSection = ({
           s.disableOnInteraction = false;
           setLoading(false);
         }}
+        onSlideChange={(s)=>{
+          
+          if(redFontIndex.includes(s.activeIndex)){
+            setFontColor("red");
+          }
+          else if (whiteFontIndex.includes(s.activeIndex)){
+            setFontColor("white");
+          }
+          else {
+            setFontColor("black");
+          }
+          // console.log(fontColor)
+          // console.log(s.activeIndex)
+        }}
         effect="fade"
         speed={400}
         autoplay={true}
 
         // autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
-        {CreateSlides(0, 46, isMobile)}
+        {CreateSlides(0, 46, isMobile , fontColor)}
       </Swiper>
     </SwiperContainer>
   );

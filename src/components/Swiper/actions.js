@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { subtitles } from "./Data.js";
 
-export function CreateSlides(start, numberOfSlides, isMobile) {
+export function CreateSlides(start, numberOfSlides, isMobile , fontColor) {
   const slideImages = [];
   if (isMobile) {
     for (let i = start; i < numberOfSlides; i += 1) {
@@ -34,7 +34,7 @@ export function CreateSlides(start, numberOfSlides, isMobile) {
           <Img src={slideImages[i].img}  alt={slideImages[i].alt}/>
         </ImgWrap>
         {/* <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div> */}
-        <ImgSubtitle className="subtitle">{subtitles[i]}</ImgSubtitle>
+        <ImgSubtitle  fontColor={fontColor}  className="subtitle">{subtitles[i]}</ImgSubtitle>
       </SwiperSlide>
     );
   }

@@ -23,12 +23,14 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
+  display:block;
+  margin: 0 auto;
 `;
 
 export const ImgSubtitle = styled.div`
-  color: rgb(120, 120, 120);
+  color: ${({fontColor}) => fontColor==="white" ? "white": fontColor==="red" ? "#bd1218" : "black"};
   position: absolute;
-  right: 4vw;
+  right: 3.6vw;
   bottom: 15%;
   white-space: nowrap;
   @media screen and (max-width: 575px) {

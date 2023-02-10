@@ -3,7 +3,7 @@ import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
   ${'' /* cursor : url(left-arrow.png), auto; */}
-  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "50px")};
+  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "150px")};
   ${'' /* padding-bottom: 25%; */}
   ${'' /* padding-right: 10vw; */}
   ${"" /* margin-top: 50px; */}
@@ -11,7 +11,8 @@ export const AboutContainer = styled.div`
 
   display: grid;
   position: absolute;
-  margin-left: 3vw;
+  margin-left: 3.6vw;
+  margin-right: 3.6vw;
 
   top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
   @media screen and (max-width: 1200px) {

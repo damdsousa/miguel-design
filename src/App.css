@@ -114,9 +114,9 @@ a {
 a:visited {
   color: #fff;
 }
-a:hover {
+/* a:hover {
   color: #fff;
-}
+} */
 
 #button-prev {
   color: rgb(120, 120, 120);

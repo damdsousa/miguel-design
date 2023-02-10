@@ -24,12 +24,13 @@ const Navbar = ({
   setSlideIndex,
   swiper,
   signal,
-  setSignal
+  setSignal,
+  fontColor
 }) => {
   
   return (
     <>
-      <Nav>
+      <Nav fontColor={fontColor} elements={elements}>
         <NavbarContainer>
           <NavLogoContainer>
             <NavLogoItem

@@ -3,6 +3,7 @@ import { isMobile } from "react-device-detect";
 import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const Nav = styled.nav`
+  color: ${({fontColor, elements}) => (fontColor==="white" || elements.about) ? "white": fontColor==="red" ? "#bd1218" : "black"};
   height: 80px;
   display: flex;
   top: 0;
@@ -12,28 +13,30 @@ export const Nav = styled.nav`
 `;
 
 export const NavbarContainer = styled.div`
+  color: inherit; 
   display: inline-grid;
   grid-template-columns: 27vw 65.9vw;
   align-items: center;
   margin-bottom:0px;
   height: ${() => (isMobile ? "45px" : "80px")};
 
-  @media screen and (max-width: 960px) {
-    grid-template-columns: 32vw 59.9vw;
-  }
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 36vw 55.9vw;
-  }
-  @media screen and (max-width: 670px) {
-    grid-template-columns: 40vw 51.7vw;
-  }
-  }
-  @media screen and (max-width: 575px) {
-    grid-template-columns: 94vw;
-  }
+  // @media screen and (max-width: 960px) {
+  //   grid-template-columns: 32vw 59.9vw;
+  // }
+  // @media screen and (max-width: 768px) {
+  //   grid-template-columns: 36vw 55.9vw;
+  // }
+  // @media screen and (max-width: 670px) {
+  //   grid-template-columns: 40vw 51.7vw;
+  // }
+  // }
+  // @media screen and (max-width: 575px) {
+  //   grid-template-columns: 94vw;
+  // }
 `;
 
 export const NavLogoContainer = styled.div`
+color: inherit; 
   justify-self: start;
   display: flex;
   justify-content: flex-start;
@@ -41,6 +44,7 @@ export const NavLogoContainer = styled.div`
 `;
 
 export const NavSlide = styled.div`
+color: inherit; 
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -51,17 +55,22 @@ export const NavSlide = styled.div`
 `;
 
 export const NavLogoItem = styled.a`
+&:hover{
+  color: ${({fontColor}) => fontColor==="red" ? "white": "rgb(120, 120, 120)"};
+} 
+color: inherit; 
   white-space: nowrap;
   cursor: pointer;
   margin-right: 25px;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @media screen and (max-width: 575px) {
     margin-right: 20px;
   }
 `;
 
 export const LogoItem = styled.div`
+color: inherit; 
 display: ${() => (isMobileOnly ? "none" : "")};
   margin-left: 25px;
   margin-right: 25px;
@@ -74,6 +83,7 @@ display: ${() => (isMobileOnly ? "none" : "")};
 `;
 
 export const MobileItem = styled.div`
+color: inherit; 
   position: absolute;
   right: 3vw;
   margin-right: 8px;
@@ -97,6 +107,7 @@ export const NavMobileMinus = styled.img`
 `;
 
 export const NavItem = styled.div`
+color: inherit; 
   ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   list-style-type: none;
   height: 80px;
@@ -108,6 +119,10 @@ export const NavItem = styled.div`
 `;
 
 export const NavLinks = styled.a`
+&:hover{
+  color: ${({fontColor}) => fontColor==="red" ? "white": "rgb(120, 120, 120)"};
+} 
+color: inherit; 
   ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   cursor: pointer;
   &:hover {

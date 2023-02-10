@@ -15,7 +15,7 @@ const Home = () => {
   const [leftHover, setLeftHover] = useState(false);
   const [rightHover, setRightHover] = useState(false);
   const [isLoading, setLoading] = useState(true);
-
+  const [fontColor, setFontColor] = useState("black")
 
   return (
     <Section load={isLoading}>
@@ -28,6 +28,7 @@ const Home = () => {
         setSlideIndex={setSlideIndex}
         signal={signal}
         setSignal={setSignal}
+        fontColor={fontColor}
       />
       <HeroSection
         setLoading={setLoading}
@@ -45,6 +46,8 @@ const Home = () => {
         setRightHover={setRightHover}
         signal={signal}
         setSignal={setSignal}
+        fontColor={fontColor}
+        setFontColor={setFontColor}
       />
     </Section>
   );

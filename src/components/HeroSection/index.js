@@ -23,6 +23,8 @@ const HeroSection = ({
   setSignal,
   isLoading,
   setLoading,
+  fontColor,
+  setFontColor
 }) => {
   // const [isLoading, setLoading] = useState(true);
   return (
@@ -69,6 +71,8 @@ const HeroSection = ({
                 setLeftHover={setLeftHover}
                 rightHover={rightHover}
                 setRightHover={setRightHover}
+                fontColor={fontColor}
+                setFontColor={setFontColor}
               />
             </CSSTransition>
           )}
