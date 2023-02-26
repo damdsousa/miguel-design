@@ -8,7 +8,7 @@ export const HeroContainer = styled.div`
   z-index: -1;
   left: ${() => (isMobile ? "50%" : "50%")};
   margin-left: ${() => (isMobile ? "-50%" : "-50%")};
-  top: ${() => (isMobile ? "0%" : "50%")};
+  top: ${() => (isMobile ? "-17%" : "50%")};   //13% for tablet
   margin-top: ${() => (isMobile ? "0%" : "-30%")};
   
  

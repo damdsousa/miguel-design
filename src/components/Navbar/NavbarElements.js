@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const Nav = styled.nav`
-  color: ${({fontColor, elements}) => (fontColor==="white" || elements.about) ? "white": fontColor==="red" ? "#bd1218" : "black"};
+  color: ${({fontColor, elements}) => (fontColor==="white" || elements.about) ? "#ffffff": fontColor==="red" ? "red" : "#000000"};
   height: 80px;
   display: flex;
   top: 0;
@@ -20,19 +20,19 @@ export const NavbarContainer = styled.div`
   margin-bottom:0px;
   height: ${() => (isMobile ? "45px" : "80px")};
 
-  // @media screen and (max-width: 960px) {
-  //   grid-template-columns: 32vw 59.9vw;
-  // }
-  // @media screen and (max-width: 768px) {
-  //   grid-template-columns: 36vw 55.9vw;
-  // }
-  // @media screen and (max-width: 670px) {
-  //   grid-template-columns: 40vw 51.7vw;
-  // }
-  // }
-  // @media screen and (max-width: 575px) {
-  //   grid-template-columns: 94vw;
-  // }
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 32vw 59.9vw;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 36vw 55.9vw;
+  }
+  @media screen and (max-width: 670px) {
+    grid-template-columns: 40vw 51.7vw;
+  }
+  }
+  @media screen and (max-width: 575px) {
+    grid-template-columns: 94vw;
+  }
 `;
 
 export const NavLogoContainer = styled.div`

@@ -27,8 +27,7 @@ const SwiperSection = ({
   const [hidden, setHidden] = useState(0);
 
   const inputRef = useRef();
-  const redFontIndex = [43,44];
-  // const redFontIndex = [40,41];
+  const redFontIndex = [44];
   const whiteFontIndex = [2,3,4,5,6,7,8,12,14,15,16,18];
 
 
@@ -110,10 +109,7 @@ const SwiperSection = ({
         }}
         onSlideChange={(s)=>{
           
-          if(redFontIndex.includes(s.activeIndex)){
-            setFontColor("red");
-          }
-          else if (whiteFontIndex.includes(s.activeIndex)){
+          if (whiteFontIndex.includes(s.activeIndex)){
             setFontColor("white");
           }
           else {

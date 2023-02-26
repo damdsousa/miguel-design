@@ -23,12 +23,11 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  display:block;
   margin: 0 auto;
 `;
 
 export const ImgSubtitle = styled.div`
-  color: ${({fontColor}) => fontColor==="white" ? "white": fontColor==="red" ? "#bd1218" : "black"};
+  color: ${({fontColor}) => fontColor==="white" ? "#ffffff": fontColor==="red" ? "red" : "#000000"};
   position: absolute;
   right: 3.6vw;
   bottom: 15%;

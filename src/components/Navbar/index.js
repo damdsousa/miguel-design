@@ -37,6 +37,7 @@ const Navbar = ({
               id="aboutLink"
               mobile={mobile}
               page={elements.about}
+              fontColor={fontColor}
               onClick={() => {
                 let index = 0;
                 if (index === elements.index) {
@@ -123,6 +124,7 @@ const Navbar = ({
           <NavSlide mobile={mobile}>
             <NavItem page={elements.about}></NavItem>
             <NavLinks
+              fontColor={fontColor}
               page={elements.about}
               href="mailto:miguel@miguellopes.info"
             >
