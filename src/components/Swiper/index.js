@@ -18,6 +18,7 @@ const SwiperSection = ({
   swiper,
   setSwiper,
   slideIndex,
+  setSlideIndex,
   isLoading,
   setLoading,
   fontColor,
@@ -27,8 +28,8 @@ const SwiperSection = ({
   const [hidden, setHidden] = useState(0);
 
   const inputRef = useRef();
-  const redFontIndex = [44];
-  const whiteFontIndex = [2,3,4,5,6,7,8,12,14,15,16,18];
+  const whiteFontIndex = [2,3,4,5,6,7,9,12,14,15,18,22,25,26,37,39,42,44];
+  // const whiteFontIndex = [1,2,3,4,5,6,8,11,13,14,17,21,23,25,26,28,29,33,37,39,42,44];
 
 
   useEffect(() => {
@@ -71,16 +72,17 @@ const SwiperSection = ({
 
   return (
     <SwiperContainer
+      fontColor={fontColor}
       cursor={hidden}
       page={elements.swiper}
       load={isLoading}
       ref={inputRef}
       onClick={() => {
         if (hidden === 2) {
-          swiper.slideNext(400);
+          swiper.slideNext(1000);
           swiper.autoplay.start();
         } else if (hidden === 1) {
-          swiper.slidePrev(400);
+          swiper.slidePrev(1000);
           swiper.autoplay.start();
         }
         
@@ -97,18 +99,21 @@ const SwiperSection = ({
         initialSlide={slideIndex}
         onSwiper={(swiper) => {
           slideIndex = swiper.activeIndex;
+          // setSlideIndex(swiper.activeIndex);
+
           setSwiper(swiper);
         }}
         onImagesReady={(s) => {
           console.log(isLoading);
 
           s.autoplay.start();
-          s.delay = 2500;
+          s.delay = 3000;
           s.disableOnInteraction = false;
           setLoading(false);
         }}
         onSlideChange={(s)=>{
-          
+          console.log("slideindex swiper", s.activeIndex);
+          // setSlideIndex(s.activeIndex);
           if (whiteFontIndex.includes(s.activeIndex)){
             setFontColor("white");
           }
@@ -119,12 +124,13 @@ const SwiperSection = ({
           // console.log(s.activeIndex)
         }}
         effect="fade"
-        speed={400}
+        crossFade={true}
+        speed={1000}
         autoplay={true}
 
         // autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
-        {CreateSlides(0, 46, isMobile , fontColor)}
+        {CreateSlides(0, 46, fontColor)}
       </Swiper>
     </SwiperContainer>
   );

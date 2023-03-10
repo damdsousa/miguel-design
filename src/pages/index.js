@@ -18,7 +18,7 @@ const Home = () => {
   const [fontColor, setFontColor] = useState("black")
 
   return (
-    <Section load={isLoading}>
+    <Section load={isLoading} fontColor={fontColor}>
       <Navbar
         mobile={mobile}
         setMobile={setMobile}

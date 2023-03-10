@@ -1,20 +1,25 @@
 import styled from "styled-components";
-import { isMobile } from "react-device-detect";
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
 
 export const HeroContainer = styled.div`
-  cursor : ${({elements}) => elements.about ? "url(left-arrow.png), auto" : "initial"}; 
+  cursor : ${({elements}) => elements.about ? "url(left_white_arrow.png), auto" : "initial"}; 
 
   position: absolute;
   z-index: -1;
   left: ${() => (isMobile ? "50%" : "50%")};
   margin-left: ${() => (isMobile ? "-50%" : "-50%")};
-  top: ${() => (isMobile ? "-17%" : "50%")};   //13% for tablet
+  top: ${() => (isMobileOnly ? "-17%" : isTablet ? "-11%": "50%")};   //13% for tablet
   margin-top: ${() => (isMobile ? "0%" : "-30%")};
   
  
   width: 100vw;
   height: 100vh;
   align-items: center;
+
+  // left: ${() => (isMobile ? "50%" : "25vw")};
+  // margin-left: ${() => (isMobile ? "-50%" : "-50vw")};
+  // top: ${() => (isMobileOnly ? "-17%" : isTablet ? "-11%": "32vw")};   //13% for tablet
+  // margin-top: ${() => (isMobile ? "0%" : "-50vw")};
 
   ${'' /* grid-template-rows: auto; */}
   ${'' /* height : ${({elements}) => elements.about ? "80vh" : ""};  */}

@@ -125,7 +125,7 @@ const Navbar = ({
             <NavItem page={elements.about}></NavItem>
             <NavLinks
               fontColor={fontColor}
-              page={elements.about}
+              elements={elements}
               href="mailto:miguel@miguellopes.info"
             >
               Email

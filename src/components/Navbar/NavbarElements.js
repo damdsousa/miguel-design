@@ -3,8 +3,8 @@ import { isMobile } from "react-device-detect";
 import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const Nav = styled.nav`
-  color: ${({fontColor, elements}) => (fontColor==="white" || elements.about) ? "#ffffff": fontColor==="red" ? "red" : "#000000"};
-  height: 80px;
+  color: ${({elements}) => ( elements.about) ? "#ffffff":  "inherit"};
+  height: 10vh;
   display: flex;
   top: 0;
   margin-right: 3vw;
@@ -119,6 +119,7 @@ color: inherit;
 `;
 
 export const NavLinks = styled.a`
+color: ${({elements}) => elements.index===42 ? "white": "inherit"};
 &:hover{
   color: ${({fontColor}) => fontColor==="red" ? "white": "rgb(120, 120, 120)"};
 } 

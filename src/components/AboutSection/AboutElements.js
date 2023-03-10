@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import { isMobileOnly, isTablet } from "react-device-detect";
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
   ${'' /* cursor : url(left-arrow.png), auto; */}
-  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "150px")};
+  margin-top: ${() => (isMobileOnly || isTablet ? "150px" : "150px")};
   ${'' /* padding-bottom: 25%; */}
   ${'' /* padding-right: 10vw; */}
   ${"" /* margin-top: 50px; */}
 
-
+  color: #fff;
   display: grid;
   position: absolute;
   margin-left: 3.6vw;
-  margin-right: 3.6vw;
-
-  top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
+  // margin-right: 3.6vw;
+  margin-right: ${() => (isMobile ? "3.6vw" : "49vw")};
+  top: ${() => (isMobileOnly ? "12.5vh" : isTablet ? "25vh" : "13%")};
   @media screen and (max-width: 1200px) {
     width: 90%;
   }

@@ -44,9 +44,9 @@ const HeroSection = ({
           });
           setMobile(!mobile);
           mobile ? setSignal(1) : setSignal(2);
-          if (elements.swiper) {
-            setSlideIndex(swiper.activeIndex);
-          }
+          // if (elements.swiper) {
+          //   setSlideIndex(swiper.activeIndex);
+          // }
         }
       }}
     >

@@ -36,7 +36,7 @@ const AboutSection = ({
       <Phone onClick={ handleClick } className="link-about" href="tel:351-913-700-157">
         T:+351 913 700 157
       </Phone>
-      <IG
+      {/* <IG
       onClick={ handleClick }
         className="link-about"
         href="https://www.instagram.com/miguelmlopes/"
@@ -44,7 +44,7 @@ const AboutSection = ({
         rel="noreferrer"
       >
         @miguellopes
-      </IG>
+      </IG> */}
       <Mail onClick={ handleClick }
         className="link-about" 
         href="mailto:miguel@miguellopes.info">
