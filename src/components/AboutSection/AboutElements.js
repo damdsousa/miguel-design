@@ -14,7 +14,7 @@ export const AboutContainer = styled.div`
   margin-left: 3.6vw;
   // margin-right: 3.6vw;
   margin-right: ${() => (isMobile ? "3.6vw" : "49vw")};
-  top: ${() => (isMobileOnly ? "12.5vh" : isTablet ? "25vh" : "13%")};
+  top: ${() => (isMobileOnly ? "12.5vh" : isTablet ? "25vh" : "8vh")};
   @media screen and (max-width: 1200px) {
     width: 90%;
   }

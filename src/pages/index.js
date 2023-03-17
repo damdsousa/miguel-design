@@ -11,6 +11,7 @@ const Home = () => {
   const [swiper, setSwiper] = useState(null);
   const [mobile, setMobile] = useState(true);
   const [signal, setSignal] = useState(0);
+  const [index, setIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const [leftHover, setLeftHover] = useState(false);
   const [rightHover, setRightHover] = useState(false);
@@ -29,6 +30,8 @@ const Home = () => {
         signal={signal}
         setSignal={setSignal}
         fontColor={fontColor}
+        index={index}
+        setIndex={setIndex}
       />
       <HeroSection
         setLoading={setLoading}
@@ -48,6 +51,8 @@ const Home = () => {
         setSignal={setSignal}
         fontColor={fontColor}
         setFontColor={setFontColor}
+        index={index}
+        setIndex={setIndex}
       />
     </Section>
   );

@@ -25,12 +25,14 @@ const Navbar = ({
   swiper,
   signal,
   setSignal,
-  fontColor
+  fontColor,
+  index,
+  setIndex
 }) => {
   
   return (
     <>
-      <Nav fontColor={fontColor} elements={elements}>
+      <Nav fontColor={fontColor} elements={elements} index={index}>
         <NavbarContainer>
           <NavLogoContainer>
             <NavLogoItem
@@ -124,6 +126,7 @@ const Navbar = ({
           <NavSlide mobile={mobile}>
             <NavItem page={elements.about}></NavItem>
             <NavLinks
+              index={index}
               fontColor={fontColor}
               elements={elements}
               href="mailto:miguel@miguellopes.info"

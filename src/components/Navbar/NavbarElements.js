@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const Nav = styled.nav`
-  color: ${({elements}) => ( elements.about) ? "#ffffff":  "inherit"};
+  color: ${({elements, index}) => ( elements.about || (index === 40 && isMobile))  ? "#ffffff":  "inherit"};
   height: 10vh;
   display: flex;
   top: 0;
@@ -56,14 +56,13 @@ color: inherit;
 
 export const NavLogoItem = styled.a`
 &:hover{
-  color: ${({fontColor}) => fontColor==="red" ? "white": "rgb(120, 120, 120)"};
+  color:rgb(120, 120, 120)};
 } 
 color: inherit; 
   white-space: nowrap;
   cursor: pointer;
   margin-right: 25px;
   text-decoration: none;
-  // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @media screen and (max-width: 575px) {
     margin-right: 20px;
   }
@@ -75,7 +74,6 @@ display: ${() => (isMobileOnly ? "none" : "")};
   margin-left: 25px;
   margin-right: 25px;
   white-space: nowrap;
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   @media screen and (max-width: 575px) {
     margin-left: 0px;
     color: #fff;
@@ -108,7 +106,6 @@ export const NavMobileMinus = styled.img`
 
 export const NavItem = styled.div`
 color: inherit; 
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   list-style-type: none;
   height: 80px;
   text-decoration: none;
@@ -119,16 +116,13 @@ color: inherit;
 `;
 
 export const NavLinks = styled.a`
-color: ${({elements}) => elements.index===42 ? "white": "inherit"};
-&:hover{
-  color: ${({fontColor}) => fontColor==="red" ? "white": "rgb(120, 120, 120)"};
-} 
-color: inherit; 
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
+  color: ${({index}) => index===40 ? "#ffffff" : "inherit"};
+  &:hover{
+    color:rgb(120, 120, 120)};
+  } 
   cursor: pointer;
   &:hover {
     text-decoration: none;
-    ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   }
  }
 `;
