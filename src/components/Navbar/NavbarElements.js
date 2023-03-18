@@ -71,12 +71,13 @@ color: inherit;
 export const LogoItem = styled.div`
 color: inherit; 
 display: ${() => (isMobileOnly ? "none" : "")};
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
   white-space: nowrap;
   @media screen and (max-width: 575px) {
-    margin-left: 0px;
-    color: #fff;
+    // margin-left: 0px;
+    // color: #fff;
+    display:none;
   }
 `;
 

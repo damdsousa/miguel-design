@@ -94,7 +94,7 @@ const SwiperSection = ({
     
       <Swiper
         // ref={loadRef}
-        modules={EffectFade}
+        modules={[Autoplay, EffectFade]}
         slidesPerView={1}
         autoHeight={true}
         loop={true}
@@ -104,35 +104,33 @@ const SwiperSection = ({
         onSwiper={(swiper) => {
           slideIndex = swiper.activeIndex;
           // setSlideIndex(swiper.activeIndex);
-
           setSwiper(swiper);
         }}
         onImagesReady={(s) => {
           console.log(isLoading);
 
           s.autoplay.start();
-          s.delay = 3000;
-          s.disableOnInteraction = false;
+          // s.delay = 3000;
+          // s.disableOnInteraction = false;
+          // s.waitForTransaction = true;
           setLoading(false);
         }}
         onSlideChange={(s)=>{
           setIndex(s.activeIndex)
-          console.log("slideindex swiper", s.activeIndex, index);
-          setIndex(s.activeIndex)
-          // setSlideIndex(s.activeIndex);
           if (whiteFontIndex.includes(s.activeIndex)){
             setFontColor("white");
           }
           else {
             setFontColor("black");
           }
-          // console.log(fontColor)
-          // console.log(s.activeIndex)
         }}
         effect="fade"
-        crossFade={true}
-        speed={1000}
-        autoplay={true}
+        fadeEffect={{crossFade: true}}
+        // crossFade={true}
+        speed={850}
+        // autoplay={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false, waitForTransition: true }}
+
 
         // autoplay={{ delay: "2500", disableOnInteraction: false }}
       >

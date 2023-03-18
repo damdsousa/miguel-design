@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Plus from "../../assets/icons/plus.png";
-import { Slant as Hamburger } from 'hamburger-react'
+import { Slant as Hamburger } from 'hamburger-react';
+import { isMobile } from "react-device-detect";
 
 
 import {
@@ -40,21 +41,26 @@ const Navbar = ({
               mobile={mobile}
               page={elements.about}
               fontColor={fontColor}
+              elements={elements}
+              index={index}
               onClick={() => {
-                let index = 0;
-                if (index === elements.index) {
-                  index = 1;
+                if(!isMobile){
+                  let index = 0;
+                  if (index === elements.index) {
+                    index = 1;
+                  }
+                  setElements({
+                    swiper: !elements.swiper,
+                    about: !elements.about,
+                    index: index,
+                  });
+                  setMobile(!mobile);
+                  mobile ? setSignal(1) : setSignal(2);
+                  if (elements.swiper) {
+                    setSlideIndex(swiper.activeIndex);
+                  }
                 }
-                setElements({
-                  swiper: !elements.swiper,
-                  about: !elements.about,
-                  index: index,
-                });
-                setMobile(!mobile);
-                mobile ? setSignal(1) : setSignal(2);
-                if (elements.swiper) {
-                  setSlideIndex(swiper.activeIndex);
-                }
+                
               }}
             >
               Miguel Lopes

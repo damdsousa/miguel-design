@@ -16,10 +16,11 @@ const Home = () => {
   const [leftHover, setLeftHover] = useState(false);
   const [rightHover, setRightHover] = useState(false);
   const [isLoading, setLoading] = useState(true);
-  const [fontColor, setFontColor] = useState("black")
+  const [fontColor, setFontColor] = useState("black");
+  const whiteFontIndex = [2,3,4,5,6,7,9,12,14,15,18,22,25,26,37,39,42,44];
 
   return (
-    <Section load={isLoading} fontColor={fontColor}>
+    <Section load={isLoading} fontColor={fontColor} whiteFontIndex={whiteFontIndex} index={index}>
       <Navbar
         mobile={mobile}
         setMobile={setMobile}
