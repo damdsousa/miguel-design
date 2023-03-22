@@ -27,12 +27,12 @@ export const Img = styled.img`
 
 export const ImgSubtitle = styled.div`
   font-size: 20px;
-  color: ${({index}) => index===40 ? "#ffffff" : "inherit"};
+  color: ${({index}) => index===40 || (isMobile && index===16) ? "#ffffff" : "inherit"};
   position: absolute;
-  right:${() => isMobileOnly ? "7vw" : "4vw"};
-  bottom: ${() => isMobileOnly ? "3.6vh" : isTablet ? "3.6vh" : "3.6vh"};
+  right:${() => isMobileOnly ? "7vw" : isTablet ? "5.5vw" : "4vw"};
+  bottom: ${() => isMobileOnly ? "13.6vh" : isTablet ? "10vh" : "3.6vh"};
   white-space: nowrap;
   @media screen and (max-width: 575px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;

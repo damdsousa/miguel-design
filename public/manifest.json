@@ -5,7 +5,7 @@
     {
       "src": "square.png",
       "type": "image/png",
-      "sizes": "24x24"
+      "sizes": "144x144"
     }
   ],
   "start_url": ".",

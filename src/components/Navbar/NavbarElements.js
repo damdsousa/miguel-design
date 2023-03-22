@@ -56,7 +56,7 @@ color: inherit;
 
 export const NavLogoItem = styled.a`
 &:hover{
-  color:rgb(120, 120, 120)};
+  color:${() => (isMobile ? "inherit" : "rgb(120, 120, 120)")};
 } 
 color: inherit; 
   white-space: nowrap;
@@ -80,13 +80,14 @@ display: ${() => (isMobileOnly ? "none" : "")};
 `;
 
 export const MobileItem = styled.div`
-color: inherit; 
+  color: inherit; 
   position: absolute;
   right: 3vw;
   margin-right: 8px;
-  @media screen and (min-width: 575px) {
-    display: none;
-  }
+  display: ${() => (isMobile ? "" : "none")};
+  // @media screen and (min-width: 575px) {
+  //   display: none;
+  // }
 `;
 
 export const NavMobilePlus = styled.img`
@@ -115,6 +116,7 @@ color: inherit;
 `;
 
 export const NavLinks = styled.a`
+  display: ${() => (isMobile ? "none" : "")};
   color: ${({index}) => index===40 ? "#ffffff" : "inherit"};
   &:hover{
     color:rgb(120, 120, 120)};

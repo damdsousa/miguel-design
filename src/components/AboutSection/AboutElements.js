@@ -5,10 +5,10 @@ export const AboutContainer = styled.div`
   margin-top: ${() => (isMobileOnly || isTablet ? "150px" : "150px")};
   color: #fff;
   position: absolute;
-  margin-right: 3vw;
+  margin-right: 4vw;
   top: ${() => (isMobileOnly ? "-3rem" : isTablet ? "-3rem" : "5vh")};
   left: ${() => (isMobileOnly ? "5vw" : isTablet ? "4.5vw" : "3vw")};
-  width: ${() => (isMobileOnly ? "70vw" : isTablet ? "80vw" : "37em")};
+  width: ${() => (isMobileOnly ? "80vw" : isTablet ? "83vw" : "37em")};
   
 `;
 
@@ -56,4 +56,8 @@ export const Phone = styled.a`
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
+  &:hover {
+    text-decoration: none;
+    color: rgb(120, 120, 120);
+  }
 `;
