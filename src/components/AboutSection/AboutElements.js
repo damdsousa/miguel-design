@@ -1,40 +1,15 @@
 import styled from "styled-components";
-import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
+import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
-  ${'' /* cursor : url(left-arrow.png), auto; */}
   margin-top: ${() => (isMobileOnly || isTablet ? "150px" : "150px")};
-  ${'' /* padding-bottom: 25%; */}
-  ${'' /* padding-right: 10vw; */}
-  ${"" /* margin-top: 50px; */}
-
   color: #fff;
-  // display: grid;
   position: absolute;
-  // margin-left: 3vw;
   margin-right: 3vw;
-  // margin-right: ${() => (isMobile ? "3.6vw" : "3.6vw")};
-  // left: 3.6vw;
   top: ${() => (isMobileOnly ? "-3rem" : isTablet ? "-3rem" : "5vh")};
   left: ${() => (isMobileOnly ? "5vw" : isTablet ? "4.5vw" : "3vw")};
   width: ${() => (isMobileOnly ? "70vw" : isTablet ? "80vw" : "37em")};
-  @media screen and (max-width: 1200px) {
-    width: 90vw;
-  }
-  @media screen and (max-width: 1080px) {
-    // left: 8px;
-    // margin-left: 3vw;
-    // margin-right: 4vw;
-    // width: 90%;
-
-  }
-
   
-
-  // @media screen and (max-width: 560px) {
-  //   margin-left: 3vw;
-  //   width: 87%;
-  // }
 `;
 
 export const Description = styled.p`

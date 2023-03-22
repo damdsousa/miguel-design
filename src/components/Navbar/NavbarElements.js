@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { isMobile } from "react-device-detect";
-import { isMobileOnly, isTablet } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 
 export const Nav = styled.nav`
   color: ${({elements, index}) => ( elements.about || (index === 40 && isMobile))  ? "#ffffff":  "inherit"};
@@ -75,8 +75,6 @@ display: ${() => (isMobileOnly ? "none" : "")};
   margin-right: 5px;
   white-space: nowrap;
   @media screen and (max-width: 575px) {
-    // margin-left: 0px;
-    // color: #fff;
     display:none;
   }
 `;

@@ -10,7 +10,6 @@ export const SwiperContainer = styled.div`
       : cursor === 2 ? fontColor==="white" ? "url(right_white.png), auto" : "url(right_black_arrow.png), auto"
       : "none"};
     @media screen and (max-width: 1080px) {
-    // margin-top: 10px;
   }
 `;
 

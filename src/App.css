@@ -98,7 +98,7 @@ a {
 .aboutM-enter-active {
   opacity: 1;
   -webkit-timing-function: ease-in;
-  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
   transition: ease-in 400ms;
 }
 .aboutM-exit {
@@ -107,7 +107,7 @@ a {
 .aboutM-exit-active {
   opacity: 0.01;
   -webkit-timing-function: ease-out;
-  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
   transition: ease-out 400ms;
 }
 

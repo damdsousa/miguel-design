@@ -3,7 +3,6 @@ import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
 import { SwiperContainer } from "./SwiperElements";
 import { Swiper } from "swiper/react";
 import { CreateSlides } from "./actions";
-import { isMobile } from "react-device-detect";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -26,13 +25,13 @@ const SwiperSection = ({
   index,
   setIndex
 }) => {
+  // eslint-disable-next-line
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(0);
   
 
   const inputRef = useRef();
   const whiteFontIndex = [2,3,4,5,6,7,9,12,14,15,18,22,25,26,37,39,42,44];
-  // const whiteFontIndex = [1,2,3,4,5,6,8,11,13,14,17,21,23,25,26,28,29,33,37,39,42,44];
 
 
   useEffect(() => {
@@ -93,7 +92,6 @@ const SwiperSection = ({
     >
     
       <Swiper
-        // ref={loadRef}
         modules={[Autoplay, EffectFade]}
         slidesPerView={1}
         autoHeight={true}
@@ -103,16 +101,12 @@ const SwiperSection = ({
         initialSlide={slideIndex}
         onSwiper={(swiper) => {
           slideIndex = swiper.activeIndex;
-          // setSlideIndex(swiper.activeIndex);
           setSwiper(swiper);
         }}
         onImagesReady={(s) => {
           console.log(isLoading);
 
           s.autoplay.start();
-          // s.delay = 3000;
-          // s.disableOnInteraction = false;
-          // s.waitForTransaction = true;
           setLoading(false);
         }}
         onSlideChange={(s)=>{
@@ -126,13 +120,8 @@ const SwiperSection = ({
         }}
         effect="fade"
         fadeEffect={{crossFade: true}}
-        // crossFade={true}
         speed={850}
-        // autoplay={true}
         autoplay={{ delay: 3000, disableOnInteraction: false, waitForTransition: true }}
-
-
-        // autoplay={{ delay: "2500", disableOnInteraction: false }}
       >
         {CreateSlides(0, 46, fontColor, index)}
       </Swiper>
