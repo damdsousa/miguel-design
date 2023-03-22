@@ -3,7 +3,6 @@ import SwiperCore, { Navigation, Autoplay, Parallax, EffectFade } from "swiper";
 import { SwiperContainer } from "./SwiperElements";
 import { Swiper } from "swiper/react";
 import { CreateSlides } from "./actions";
-import { isMobile } from "react-device-detect";
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -18,13 +17,22 @@ const SwiperSection = ({
   swiper,
   setSwiper,
   slideIndex,
+  setSlideIndex,
   isLoading,
   setLoading,
+  fontColor,
+  setFontColor,
+  index,
+  setIndex
 }) => {
+  // eslint-disable-next-line
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(0);
+  
 
   const inputRef = useRef();
+  const whiteFontIndex = [2,3,4,5,6,7,9,12,14,15,18,22,25,26,37,39,42,44];
+
 
   useEffect(() => {
     addEventListeners();
@@ -66,16 +74,17 @@ const SwiperSection = ({
 
   return (
     <SwiperContainer
+      fontColor={fontColor}
       cursor={hidden}
       page={elements.swiper}
       load={isLoading}
       ref={inputRef}
       onClick={() => {
         if (hidden === 2) {
-          swiper.slideNext(400);
+          swiper.slideNext(1000);
           swiper.autoplay.start();
         } else if (hidden === 1) {
-          swiper.slidePrev(400);
+          swiper.slidePrev(1000);
           swiper.autoplay.start();
         }
         
@@ -83,7 +92,7 @@ const SwiperSection = ({
     >
     
       <Swiper
-        // ref={loadRef}
+        modules={[Autoplay, EffectFade]}
         slidesPerView={1}
         autoHeight={true}
         loop={true}
@@ -98,17 +107,23 @@ const SwiperSection = ({
           console.log(isLoading);
 
           s.autoplay.start();
-          s.delay = 2500;
-          s.disableOnInteraction = false;
           setLoading(false);
         }}
+        onSlideChange={(s)=>{
+          setIndex(s.activeIndex)
+          if (whiteFontIndex.includes(s.activeIndex)){
+            setFontColor("white");
+          }
+          else {
+            setFontColor("black");
+          }
+        }}
         effect="fade"
-        speed={400}
-        autoplay={true}
-
-        // autoplay={{ delay: "2500", disableOnInteraction: false }}
+        fadeEffect={{crossFade: true}}
+        speed={850}
+        autoplay={{ delay: 3000, disableOnInteraction: false, waitForTransition: true }}
       >
-        {CreateSlides(0, 52, isMobile)}
+        {CreateSlides(0, 46, fontColor, index)}
       </Swiper>
     </SwiperContainer>
   );

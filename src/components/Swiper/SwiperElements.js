@@ -1,44 +1,38 @@
 import styled from "styled-components";
-import { isMobile } from "react-device-detect";
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
 
 export const SwiperContainer = styled.div`
-  overflow: hidden;
-  margin-top: 90px;
-  cursor: ${({ cursor }) =>
+  height:100vh;
+  width: 100vw;
+  cursor: ${({ cursor, fontColor }) =>
     isMobile
-      ? "initial"
-      : cursor === 1
-      ? "url(left-arrow.png), auto"
-      : cursor === 2
-      ? "url(right-arrow.png), auto"
+      ? "initial" : cursor === 1 ? fontColor==="white" ? "url(left_white_arrow.png), auto" : "url(left_black_arrow.png), auto"
+      : cursor === 2 ? fontColor==="white" ? "url(right_white.png), auto" : "url(right_black_arrow.png), auto"
       : "none"};
     @media screen and (max-width: 1080px) {
-    margin-top: 10px;
   }
 `;
 
-// export const SubContainer = styled.div`
-//  overflow: hidden;
-//   margin-top: 75px;
-  // @media screen and (max-width: 1080px) {
-  //   margin-top: 30px;
-  // }
-// `;
 export const ImgWrap = styled.div`
-  ${'' /* margin-top: 0px; */}
+  height:100vh;
+  width: 100vw;
 `;
 
-export const Img = styled.img`
-  width: 100%;
+export const Img = styled.img`  
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
 `;
 
 export const ImgSubtitle = styled.div`
-  color: rgb(120, 120, 120);
+  font-size: 20px;
+  color: ${({index}) => index===40 ? "#ffffff" : "inherit"};
   position: absolute;
-  right: 3%;
-  bottom: 5%;
+  right:${() => isMobileOnly ? "7vw" : "4vw"};
+  bottom: ${() => isMobileOnly ? "3.6vh" : isTablet ? "3.6vh" : "3.6vh"};
   white-space: nowrap;
   @media screen and (max-width: 575px) {
-    font-size: 12px;
+    font-size: 18px;
   }
 `;

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { isMobile } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 
 export const Nav = styled.nav`
-  height: 80px;
+  color: ${({elements, index}) => ( elements.about || (index === 40 && isMobile))  ? "#ffffff":  "inherit"};
+  height: 10vh;
   display: flex;
   top: 0;
   margin-right: 3vw;
@@ -11,6 +13,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavbarContainer = styled.div`
+  color: inherit; 
   display: inline-grid;
   grid-template-columns: 27vw 65.9vw;
   align-items: center;
@@ -33,6 +36,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogoContainer = styled.div`
+color: inherit; 
   justify-self: start;
   display: flex;
   justify-content: flex-start;
@@ -40,6 +44,7 @@ export const NavLogoContainer = styled.div`
 `;
 
 export const NavSlide = styled.div`
+color: inherit; 
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -50,28 +55,32 @@ export const NavSlide = styled.div`
 `;
 
 export const NavLogoItem = styled.a`
+&:hover{
+  color:rgb(120, 120, 120)};
+} 
+color: inherit; 
   white-space: nowrap;
   cursor: pointer;
   margin-right: 25px;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @media screen and (max-width: 575px) {
     margin-right: 20px;
   }
 `;
 
 export const LogoItem = styled.div`
-  margin-left: 25px;
-  margin-right: 25px;
+color: inherit; 
+display: ${() => (isMobileOnly ? "none" : "")};
+  margin-left: 5px;
+  margin-right: 5px;
   white-space: nowrap;
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   @media screen and (max-width: 575px) {
-    margin-left: 0px;
-    color: #fff;
+    display:none;
   }
 `;
 
 export const MobileItem = styled.div`
+color: inherit; 
   position: absolute;
   right: 3vw;
   margin-right: 8px;
@@ -95,7 +104,7 @@ export const NavMobileMinus = styled.img`
 `;
 
 export const NavItem = styled.div`
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
+color: inherit; 
   list-style-type: none;
   height: 80px;
   text-decoration: none;
@@ -106,11 +115,13 @@ export const NavItem = styled.div`
 `;
 
 export const NavLinks = styled.a`
-  ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
+  color: ${({index}) => index===40 ? "#ffffff" : "inherit"};
+  &:hover{
+    color:rgb(120, 120, 120)};
+  } 
   cursor: pointer;
   &:hover {
     text-decoration: none;
-    ${'' /* color: ${({ page }) => (page ? "rgb(120, 120, 120)" : "#fff")}; */}
   }
  }
 `;

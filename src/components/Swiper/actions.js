@@ -1,17 +1,27 @@
 import React from "react";
 import { SwiperSlide } from "swiper/react";
 import { ImgWrap, Img, ImgSubtitle } from "./SwiperElements";
+import { isMobileOnly, isTablet } from "react-device-detect";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { subtitles } from "./Data.js";
 
-export function CreateSlides(start, numberOfSlides, isMobile) {
+export function CreateSlides(start, numberOfSlides, fontColor, index) {
   const slideImages = [];
-  if (isMobile) {
+  if (isMobileOnly) {
     for (let i = start; i < numberOfSlides; i += 1) {
       slideImages[i] = {
         id: "slide" + (i + 1),
-        img: require(`../../assets/images/sizeB/miguel-lopes-${1 + i}.jpg`)
+        img: require(`../../assets/images/mobile/miguel-lopes-${1 + i}.jpg`)
+          .default,
+        alt: "slide" + (i + 1),
+      };
+    }
+  } else if (isTablet) {
+    for (let i = start; i < numberOfSlides; i += 1) {
+      slideImages[i] = {
+        id: "slide" + (i + 1),
+        img: require(`../../assets/images/tablet/miguel-lopes-${1 + i}.jpg`)
           .default,
         alt: "slide" + (i + 1),
       };
@@ -20,7 +30,7 @@ export function CreateSlides(start, numberOfSlides, isMobile) {
     for (let i = start; i < numberOfSlides; i += 1) {
       slideImages[i] = {
         id: "slide" + (i + 1),
-        img: require(`../../assets/images/miguel-lopes-${1 + i}.jpg`).default,
+        img: require(`../../assets/images/desktop/miguel-lopes-${1 + i}.jpg`).default,
         alt: "slide" + (i + 1),
       };
     }
@@ -33,8 +43,7 @@ export function CreateSlides(start, numberOfSlides, isMobile) {
         <ImgWrap>
           <Img src={slideImages[i].img}  alt={slideImages[i].alt}/>
         </ImgWrap>
-        {/* <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div> */}
-        <ImgSubtitle className="subtitle">{subtitles[i]}</ImgSubtitle>
+        <ImgSubtitle index={index} fontColor={fontColor}  className="subtitle">{subtitles[i]}</ImgSubtitle>
       </SwiperSlide>
     );
   }

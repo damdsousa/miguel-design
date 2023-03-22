@@ -2,35 +2,14 @@ import styled from "styled-components";
 import { isMobileOnly, isTablet } from "react-device-detect";
 
 export const AboutContainer = styled.div`
-  ${'' /* cursor : url(left-arrow.png), auto; */}
-  margin-top: ${() => (isMobileOnly || isTablet ? "0px" : "50px")};
-  ${'' /* padding-bottom: 25%; */}
-  ${'' /* padding-right: 10vw; */}
-  ${"" /* margin-top: 50px; */}
-  width: 92%;
-  max-width: 600px;
-  display: grid;
+  margin-top: ${() => (isMobileOnly || isTablet ? "150px" : "150px")};
+  color: #fff;
   position: absolute;
-  margin-left: 8px;
-  left: 30vw;
-  top: ${() => (isMobileOnly ? "12.5%" : isTablet ? "9%" : "13%")};
-  @media screen and (max-width: 1200px) {
-    width: 90%;
-  }
-  @media screen and (max-width: 1080px) {
-    left: 8px;
-    margin-left: 3vw;
-    margin-right: 4vw;
-    width: 90%;
-
-  }
-
+  margin-right: 3vw;
+  top: ${() => (isMobileOnly ? "-3rem" : isTablet ? "-3rem" : "5vh")};
+  left: ${() => (isMobileOnly ? "5vw" : isTablet ? "4.5vw" : "3vw")};
+  width: ${() => (isMobileOnly ? "70vw" : isTablet ? "80vw" : "37em")};
   
-
-  @media screen and (max-width: 560px) {
-    margin-left: 3vw;
-    width: 87%;
-  }
 `;
 
 export const Description = styled.p`
@@ -57,7 +36,24 @@ export const AboutLink = styled.div`
 `;
 
 export const Mail = styled.a`
+  display:block;
    @media screen and (min-width: 575px) {
     display: none;
   }
+`;
+
+export const IG = styled.a`
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+`;
+
+export const Phone = styled.a`
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
 `;

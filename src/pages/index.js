@@ -11,13 +11,16 @@ const Home = () => {
   const [swiper, setSwiper] = useState(null);
   const [mobile, setMobile] = useState(true);
   const [signal, setSignal] = useState(0);
+  const [index, setIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const [leftHover, setLeftHover] = useState(false);
   const [rightHover, setRightHover] = useState(false);
   const [isLoading, setLoading] = useState(true);
+  const [fontColor, setFontColor] = useState("black");
+  const whiteFontIndex = [2,3,4,5,6,7,9,12,14,15,18,22,25,26,37,39,42,44];
 
   return (
-    <Section load={isLoading}>
+    <Section load={isLoading} fontColor={fontColor} whiteFontIndex={whiteFontIndex} index={index}>
       <Navbar
         mobile={mobile}
         setMobile={setMobile}
@@ -27,6 +30,9 @@ const Home = () => {
         setSlideIndex={setSlideIndex}
         signal={signal}
         setSignal={setSignal}
+        fontColor={fontColor}
+        index={index}
+        setIndex={setIndex}
       />
       <HeroSection
         setLoading={setLoading}
@@ -44,6 +50,10 @@ const Home = () => {
         setRightHover={setRightHover}
         signal={signal}
         setSignal={setSignal}
+        fontColor={fontColor}
+        setFontColor={setFontColor}
+        index={index}
+        setIndex={setIndex}
       />
     </Section>
   );

@@ -1,35 +1,16 @@
 import styled from "styled-components";
-import { isMobile } from "react-device-detect";
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
 
 export const HeroContainer = styled.div`
-  cursor : ${({elements}) => elements.about ? "url(left-arrow.png), auto" : "initial"}; 
-
-  margin-top: ${({elements}) => (isMobile ? "15px" : "0px")};
-  margin-right: 3vw;
-  margin-left: 3vw;
-  grid-template-columns: 27vw 65.9vw;
+  cursor : ${({elements}) => elements.about ? "url(left_white_arrow.png), auto" : "initial"}; 
+  position: absolute;
+  z-index: -1;
+  left: ${() => (isMobile ? "50%" : "0vw")};
+  margin-left: ${() => (isMobile ? "-50%" : "inherit")};
+  top: ${() => (isMobileOnly ? "0vh" : isTablet ? "0vh": "0vh")};   //13% for tablet, 24% half size desktop, 7% minimum
   align-items: center;
-  display: grid;
-  ${'' /* grid-template-rows: auto; */}
-  ${'' /* height : ${({elements}) => elements.about ? "80vh" : ""};  */}
-  height:80vh;
-  @media screen and (max-height: 500px) {
-    height : ${({elements}) => elements.about ? "60vh" : ""}; 
-  }
-  @media screen and (max-width: 1080px) {
-    grid-template-columns: 100%;
-    height:initial;
-  }
-  ${'' /* padding-bottom: 500px; */}
 `;
 
-export const HeroBlank = styled.div`
-  ${'' /* cursor: ${() => (isMobile ? "none" : "initial")}; */}
-  ${'' /* cursor : url(close.png), auto; */}
-  @media screen and (max-width: 1080px) {
-   display: none;
-  }
 
-`;
 
 export const HeroActive = styled.div``;

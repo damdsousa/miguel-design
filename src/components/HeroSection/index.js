@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import AboutSection from "../AboutSection";
 import SwiperSection from "../Swiper";
 
-import { HeroContainer, HeroBlank, HeroActive } from "./HeroElements";
+import { HeroContainer, HeroActive } from "./HeroElements";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { isMobile } from "react-device-detect";
 
@@ -23,8 +23,11 @@ const HeroSection = ({
   setSignal,
   isLoading,
   setLoading,
+  fontColor,
+  setFontColor,
+  index,
+  setIndex
 }) => {
-  // const [isLoading, setLoading] = useState(true);
   return (
     <HeroContainer
       elements={elements}
@@ -42,29 +45,11 @@ const HeroSection = ({
           });
           setMobile(!mobile);
           mobile ? setSignal(1) : setSignal(2);
-          if (elements.swiper) {
-            setSlideIndex(swiper.activeIndex);
-          }
         }
       }}
     >
-      <HeroBlank></HeroBlank>
+      
       <HeroActive>
-        {/* {elements.swiper && isLoading && (
-          <LoadingSection
-            setLoading={setLoading}
-            isLoading={isLoading}
-            elements={elements}
-            slideIndex={slideIndex}
-            setSlideIndex={setSlideIndex}
-            setSwiper={setSwiper}
-            swiper={swiper}
-            leftHover={leftHover}
-            setLeftHover={setLeftHover}
-            rightHover={rightHover}
-            setRightHover={setRightHover}
-          />
-        )} */}
         <TransitionGroup component={null}>
           {elements.swiper && (
             <CSSTransition
@@ -84,6 +69,10 @@ const HeroSection = ({
                 setLeftHover={setLeftHover}
                 rightHover={rightHover}
                 setRightHover={setRightHover}
+                fontColor={fontColor}
+                setFontColor={setFontColor}
+                index={index}
+                setIndex={setIndex}
               />
             </CSSTransition>
           )}
